@@ -1,0 +1,80 @@
+.container{
+    height: 100vh;
+    max-width: 100%;    
+    padding: 0;
+    margin:0; 
+    overflow: hidden;
+    background: url(../../assets/banner2.jpg) no-repeat;
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
+}
+.left{
+    width: 65%;
+    height: 100vh;
+    float: left;
+    position: absolute;
+    opacity:0.9;
+    background-color:#ddd;
+    // padding-top: 50px;
+}
+
+.right{
+    width: 35%;
+    height: 100vh;
+    float: right;
+    opacity:0.9;
+    background-color:#ddd;
+    padding-top: 50px;
+}
+.clear-both{
+    clear: both;
+}
+.anhlogo{
+    background: url(../../assets/logo.png) no-repeat;
+    background-size: cover;
+    width: 261px;
+    height: 20px;
+    margin-left: 50px;
+}
+.submit button{
+    color: #ffffff;    
+    text-decoration: none;  
+    padding: 5px 107px;
+    background: orange;
+    font-size: 20px; 
+    margin-left: 30px; 
+    border-radius: 3px;
+    border: 1px solid #e2e2e2;
+    box-shadow: none;
+}
+.left h2{
+    text-align: center;
+    margin-top: 20px;
+}
+.img-parttern {
+    background: url(../../assets/Pattern.png) center;
+    background-size: contain !important;
+    height: 15px;
+    width: 80%;
+    margin-left: 80px;
+    margin-top: 30px;
+}
+.mauxam{
+    color: gray;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: "Source Sans Pro", sans-serif !important;
+}
+.thongtin{
+    padding-top: 20px;
+    padding-left: 30px;
+}
+textarea{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+h2{
+    color: gray;
+    font-weight: bold;
+}

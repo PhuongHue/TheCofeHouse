@@ -1,0 +1,281 @@
+<div class="container">
+  <div class="wrapping">
+    <div class="left">
+      <div class="list_menu">
+        <h2>MENU "NHÀ CÀ PHÊ"</h2>
+        <div class="wrapping-listmenu">
+          <div class="item" style="cursor: pointer;">
+            <div class="titleMenu1">Món nổi bật
+              <span class="caret"></span>
+            </div>
+            <div class="listItem1">
+              <div *ngFor="let mon of monNoiBat">
+                <div class="item-box">
+                  <div class="item-box-content">
+                    <div class="menu-item">
+                      <div class="item-thumbnail-container">
+                        <img [src]='mon.background' alt="" srcset="">
+                        <div class="menu-item-name">
+                          <span class="name_item">
+                            {{mon.name}} - {{mon.price}}K
+                          </span>
+                        </div>
+                      </div>
+                      <div class="menu-item-desc">{{mon.title}}</div>
+                    </div>
+                    <div class="variants-container">
+                      <div class="row add_remove">
+                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)">
+                          <i class="fa fa-minus"></i>
+                        </div>
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
+                          <i class="fa fa-plus"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear-both"></div>
+            </div>
+          </div>
+
+          <div class="item" style="cursor: pointer">
+            <div class="titleMenu2">Cà phê
+              <span class="caret"></span>
+            </div>
+            <div class="listItem2">
+              <div *ngFor="let mon of caPhe">
+                <div class="item-box">
+                  <div class="item-box-content">
+                    <div class="menu-item">
+                      <div class="item-thumbnail-container">
+                        <img [src]='mon.background' alt="" srcset="">
+                        <div class="menu-item-name">
+                          <span class="name_item">
+                            {{mon.name}} - {{mon.price}}K
+                          </span>
+                        </div>
+                      </div>
+                      <div class="menu-item-desc">{{mon.title}}</div>
+                    </div>
+                    <div class="variants-container">
+                      <div class="row add_remove">
+                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)">
+                          <i class="fa fa-minus"></i>
+                        </div>
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
+                          <i class="fa fa-plus"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear-both"></div>
+            </div>
+          </div>
+
+          <div class="item" style="cursor: pointer;">
+            <div class="titleMenu3">Socola
+              <span class="caret"></span>
+            </div>
+            <div class="listItem3">
+              <div *ngFor="let mon of socola">
+                <div class="item-box">
+                  <div class="item-box-content">
+                    <div class="menu-item">
+                      <div class="item-thumbnail-container">
+                        <img [src]='mon.background' alt="" srcset="">
+                        <div class="menu-item-name">
+                          <span class="name_item">
+                            {{mon.name}} - {{mon.price}}K
+                          </span>
+                        </div>
+                      </div>
+                      <div class="menu-item-desc">{{mon.title}}</div>
+                    </div>
+                    <div class="variants-container">
+                      <div class="row add_remove">
+                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)">
+                          <i class="fa fa-minus"></i>
+                        </div>
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
+                          <i class="fa fa-plus"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear-both"></div>
+            </div>
+          </div>
+
+          <div class="item" style="cursor: pointer;">
+            <div class="titleMenu4">Thức uống trái cây
+              <span class="caret"></span>
+            </div>
+            <div class="listItem4">
+              <div *ngFor="let mon of traiCay">
+                <div class="item-box">
+                  <div class="item-box-content">
+                    <div class="menu-item">
+                      <div class="item-thumbnail-container">
+                        <img [src]='mon.background' alt="" srcset="">
+                        <div class="menu-item-name">
+                          <span class="name_item">
+                            {{mon.name}} - {{mon.price}}K
+                          </span>
+                        </div>
+                      </div>
+                      <div class="menu-item-desc">{{mon.title}}</div>
+                    </div>
+                    <div class="variants-container">
+                      <div class="row add_remove">
+                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)">
+                          <i class="fa fa-minus"></i>
+                        </div>
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
+                          <i class="fa fa-plus"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear-both"></div>
+            </div>
+          </div>
+
+          <div class="item" style="cursor: pointer;">
+            <div class="titleMenu5">Trà đặc biệt
+              <span class="caret"></span>
+            </div>
+            <div class="listItem5">
+              <div *ngFor="let mon of traDacBiet">
+                <div class="item-box">
+                  <div class="item-box-content">
+                    <div class="menu-item">
+                      <div class="item-thumbnail-container">
+                        <img [src]='mon.background' alt="" srcset="">
+                        <div class="menu-item-name">
+                          <span class="name_item">
+                            {{mon.name}} - {{mon.price}}K
+                          </span>
+                        </div>
+                      </div>
+                      <div class="menu-item-desc">{{mon.title}}</div>
+                    </div>
+                    <div class="variants-container">
+                      <div class="row add_remove">
+                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)">
+                          <i class="fa fa-minus"></i>
+                        </div>
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
+                          <i class="fa fa-plus"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear-both"></div>
+            </div>
+          </div>
+
+          <div class="item" style="cursor: pointer;">
+            <div class="titleMenu6">Gift
+              <span class="caret"></span>
+            </div>
+            <div class="listItem6">
+              <div *ngFor="let mon of gift">
+                <div class="item-box">
+                  <div class="item-box-content">
+                    <div class="menu-item">
+                      <div class="item-thumbnail-container">
+                        <img [src]='mon.background' alt="" srcset="">
+                        <div class="menu-item-name">
+                          <span class="name_item">
+                            {{mon.name}} - {{mon.price}}K
+                          </span>
+                        </div>
+                      </div>
+                      <div class="menu-item-desc">{{mon.title}}</div>
+                    </div>
+                    <div class="variants-container">
+                      <div class="row add_remove">
+                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)">
+                          <i class="fa fa-minus"></i>
+                        </div>
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
+                          <i class="fa fa-plus"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear-both"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="anhlogo">
+
+      </div>
+      
+      <div class="btn btn-success" (click)="hienThiThongTinURL()">
+          Hien thi thong tin
+        </div>
+      <div class="wrapper">
+        <div class="thongtin">
+        <p class="mauxam1">THÔNG TIN NGƯỜI NHẬN</p>
+        <div class="thongtin-kh" *ngFor="let thongTin of thongTinKH">
+          <div>
+            <span class="mauxam">Họ tên:</span> {{thongTin.hoTen}}
+          </div>
+          <div>
+            <span class="mauxam">Số điện thoại:</span>{{thongTin.sdt}}
+          </div>
+          <div>
+            <span class="mauxam">Email:</span>{{thongTin.email}}
+          </div>
+        </div>
+      </div>
+
+      <div class="diadiem">
+        <p class="mauxam1">ĐỊA ĐIỂM GIAO HÀNG</p>
+        <div class="thongtin-kh" *ngFor="let thongTin of thongTinKH">
+          <div>
+            <span class="mauxam">Địa chỉ:</span>{{thongTin.diaChi}}
+          </div>
+          <div>
+            <span class="mauxam">Quận: </span>{{thongTin.quanHuyen}}
+          </div>
+          <div>
+            <span class="mauxam">Thành Phố:</span>{{thongTin.thanhPho}}
+          </div>
+        </div>
+      </div>
+      </div>
+      
+      <div class="danhsachchon">
+        <p class="mauxam1">CÁC MÓN ĐÃ CHỌN</p>
+        <div *ngFor="let mon of hienMonNoiBat">
+          {{mon.name}}
+        </div>
+
+        <p>Gia tien la:</p><br>
+        {{giaTien}}
+      </div>
+      <div class="submit" style="cursor: pointer">
+        <button type="button" (click)="pay()">Thanh Toán</button>
+      </div>
+
+    </div>
+    <div class="clear-both"></div>
+  </div>
+</div>

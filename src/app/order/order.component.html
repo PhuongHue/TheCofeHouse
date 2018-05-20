@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="left">
+    <div class="tieude">
+      <h3>ĐẶT HÀNG VÀ GIAO TẬN NƠI TẠI</h3>
+      <h2>THE COFFEE HOUSE DELIVERY</h2>
+      <h4>Đừng quên
+        <span class="cam">Đăng nhập</span> vào tài khoản
+        <span class="cam">The Coffee House Rewards</span> của bạn để tích điểm và nhận các ưu đãi nhé!</h4>
+    </div>
+
+    <div class="content">
+      <div class="anh">
+
+      </div>
+      <div class="orderstep">
+        <h4 style="font-weight: bold;">CÁC BƯỚC ĐẶT MÓN</h4>
+        <p>1 Điền thông tin nhận hàng (tên, số điện thoại, địa chỉ nhận hàng)</p>
+        <p>2 Chọn món yêu thích</p>
+        <p>3 Tối đa 30 phút (*) bạn sẽ có ngay món uống yêu thích!</p>
+
+        <span class="cam" style="font-size: 14px;">(*) Thời gian có thể khác nhau tùy thuộc vào vị trí và giao thông tại thời điểm đặt hàng. </span>
+        <br>
+        <span class="cam" style="font-size: 14px;">Thời gian phục vụ : 7h-20h</span>
+      </div>
+      <div class="clear-both"></div>
+    </div>
+
+  </div>
+
+  <div class="right">
+    <form [formGroup]="orderForm">
+      <div class="anhlogo"></div>
+
+      <div class="thongtin">
+        <p class="mauxam">Thông tin người nhận</p>
+        <div class="form-control">
+          <input type="text" id="hoten" placeholder="Họ Tên" formControlName="hoten" [(ngModel)] = "name">
+          <div class="mistake" *ngIf="formErrors.hoten">{{formErrors.hoten}}</div>
+        </div>
+        <div class="form-control">
+          <input type="text" id="sdt" placeholder="Số điện thoại" formControlName="sdt" [(ngModel)] = "phoneNumber">
+          <div class="mistake" *ngIf="formErrors.sdt">{{formErrors.sdt}}</div>
+        </div>
+        <div class="form-control">
+          <input type="text" id="email" placeholder="Email" formControlName="email" [(ngModel)] = "mail">
+          <div class="mistake" *ngIf="formErrors.email">{{formErrors.email}}</div>
+        </div>
+      </div>
+
+      <div class="diadiem">
+        <p class="mauxam">Địa điểm giao hàng</p>
+        <div class="form-control">
+          <input type="text" id="diachi" placeholder="Địa chỉ" formControlName="diachi" [(ngModel)] = "address">
+          <div class="mistake" *ngIf="formErrors.diachi">{{formErrors.diachi}}</div>
+        </div>
+        <div class="form-control">
+          <input type="text" id="quanhuyen" placeholder="Quận/Huyện" formControlName="quanhuyen" [(ngModel)] = "district">
+          <div class="mistake" *ngIf="formErrors.quanhuyen">{{formErrors.quanhuyen}}</div>
+        </div>
+        <div class="form-control">
+          <input type="text" id="thanhpho" placeholder="Tỉnh/Thành phố" formControlName="thanhpho" [(ngModel)] = "city">
+          <div class="mistake" *ngIf="formErrors.thanhpho">{{formErrors.thanhpho}}</div>
+        </div>
+      </div>
+      <div class="submit" style="cursor: pointer">
+        <button type="button" [routerLink]="['/menu']" [disabled]="!orderForm.valid || isSubmitting" (click)="onSubmit()">Chọn món</button>
+      </div>
+    </form>
+  </div>
+  <div class="clear-both"></div>
+</div>

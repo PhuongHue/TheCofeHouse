@@ -1,0 +1,320 @@
+{
+  "address": [
+    {
+      "hoTen": "nguyentrongdai",
+      "sdt": "1234567890",
+      "email": "nguyentrongdai290197@gmail.com",
+      "diaChi": "esredtrfyguyhijk",
+      "quanHuyen": "rdfghhjkl",
+      "thanhPho": "dtfghjjk",
+      "id": 1
+    },
+    {
+      "hoTen": "truongnvan111",
+      "sdt": "1234567890",
+      "email": "nguyenvan@mfah.com",
+      "diaChi": "esrdxfgcghvjhkjkl",
+      "quanHuyen": "serdfghhjkjkl",
+      "thanhPho": "dfxdcgvhbjkml",
+      "id": 2
+    },
+    {
+      "hoTen": "ngtrdai197",
+      "sdt": "123456789",
+      "email": "nguyentrongdai290197@gmail.com",
+      "diaChi": "sdfghjkjl;l",
+      "quanHuyen": "sredtrfghjkjlk;",
+      "thanhPho": "dfghjkjl;",
+      "id": 3
+    }
+  ],
+  "comment": [
+    {
+      "hoTen": "Đỗ Thị Mỹ Linh",
+      "email": "dothimylinh97ld@gmail.com",
+      "binhLuan": "Hello Linh Hello Huệ",
+      "id": 1
+    },
+    {
+      "hoTen": "Đỗ Thị Mỹ Linh",
+      "email": "dothimylinh97ld@gmail.com",
+      "binhLuan": "Hello Linh Hello Huệ",
+      "id": 2
+    },
+    {
+      "hoTen": "Huệ Điên",
+      "email": "huehue@gmail.com",
+      "binhLuan": "Hello Huệ",
+      "id": 3
+    },
+    {
+      "hoTen": "Linh",
+      "email": "LinhLinh@gmail.com",
+      "binhLuan": "leleleel",
+      "id": 4
+    },
+    {
+      "hoTen": "LnihLinh",
+      "email": "dfghjkhmnhujk@gmail.com",
+      "binhLuan": "dfjhfh",
+      "id": 5
+    }
+  ],
+  "MonNoiBat": [
+    {
+      "background": "../../assets/menu1.jpg",
+      "name": "MATCHA ĐÁ XAY",
+      "price": "59",
+      "id": 1,
+      "title": "Trà xanh, sữa tươi, kem tươi"
+    },
+    {
+      "background": "../../assets/menu3.jpg",
+      "name": "TRÀ ĐÀO CAM SẢ",
+      "price": "55",
+      "id": 2,
+      "title": "Trà đào, cam, sả"
+    },
+    {
+      "background": "../../assets/1.jpg",
+      "name": "AMERICANO NÓNG",
+      "price": "49",
+      "id": 3,
+      "title": "Espresso, nước nóng"
+    },
+    {
+      "background": "../../assets/2.jpg",
+      "name": "AMERICANO ĐÁ",
+      "price": "49",
+      "id": 4,
+      "title": "Espresso, nước nóng, đá viên"
+    },
+    {
+      "background": "../../assets/3.jpg",
+      "name": "CAPPUCINO NÓNG",
+      "price": "55",
+      "id": 5,
+      "title": "Cappucino (hot)"
+    },
+    {
+      "background": "../../assets/4.jpg",
+      "name": "CAPPUCINO ĐÁ",
+      "price": "55",
+      "id": 6,
+      "title": "Cappucino (ice)"
+    }
+  ],
+  "CaPhe": [
+    {
+      "background": "../../assets/8.jpg",
+      "name": "ESPRESSO ĐÁ",
+      "price": "45",
+      "id": 7,
+      "title": "Espresso đá"
+    },
+    {
+      "background": "../../assets/9.jpg",
+      "name": "ESPRESSO NÓNG",
+      "price": "45",
+      "id": 8,
+      "title": "Espresso nóng"
+    },
+    {
+      "background": "../../assets/10.jpg",
+      "name": "ESPRESSO SỮA ĐÁ",
+      "price": "45",
+      "id": 9,
+      "title": "Espresso,sữa đặc, đá viên"
+    },
+    {
+      "background": "../../assets/3.jpg",
+      "name": "LATTE NÓNG",
+      "price": "55",
+      "id": 10,
+      "title": "Latte(hot)"
+    },
+    {
+      "background": "../../assets/11.jpg",
+      "name": "CAPPUCINO NÓNG",
+      "price": "55",
+      "id": 11,
+      "title": "Cappucino (hot)"
+    },
+    {
+      "background": "../../assets/4.jpg",
+      "name": "CAPPUCINO ĐÁ",
+      "price": "55",
+      "id": 12,
+      "title": "Cappucino (ice)"
+    },
+    {
+      "background": "../../assets/5.jpg",
+      "name": "HAZELNUT ĐÁ XAY",
+      "price": "59",
+      "id": 13,
+      "title": "Espresso, Hazelnut, Kem tươi"
+    },
+    {
+      "background": "../../assets/7.jpg",
+      "name": "CARAMEL MACHIATO ĐÁ",
+      "price": "65",
+      "id": 14,
+      "title": "Espresso, sữa tươi, caramel, đá viên"
+    },
+    {
+      "background": "../../assets/12.jpg",
+      "name": "ESPRESSO SỮA NÓNG",
+      "price": "65",
+      "id": 15,
+      "title": "Espresso, sữa đặc"
+    },
+    {
+      "background": "../../assets/6.jpg",
+      "name": "CARAMEL MACHIATO NÓNG",
+      "price": "65",
+      "id": 16,
+      "title": "Espresso, sữa tươi, caramel"
+    },
+    {
+      "background": "../../assets/1.jpg",
+      "name": "AMERICANO NÓNG",
+      "price": "49",
+      "id": 17,
+      "title": "Espresso, nước nóng"
+    }
+  ],
+  "socola": [
+    {
+      "background": "../../assets/13.jpg",
+      "name": "SÔ CÔ LA ĐÁ XAY",
+      "price": "59",
+      "id": 18,
+      "title": "Chocolate, sữa tươi, kem tươi, đá xay"
+    },
+    {
+      "background": "../../assets/14.jpg",
+      "name": "COOKIES ĐÁ XAY",
+      "price": "59",
+      "id": 19,
+      "title": "Bánh Cookie, Sữa tươi, Kem tươi"
+    },
+    {
+      "background": "../../assets/15.jpg",
+      "name": "TOFFEE HẠNH NHÂN NÓNG",
+      "price": "59",
+      "id": 20,
+      "title": "Chocolate, hạnh nhân, sữa tươi"
+    },
+    {
+      "background": "../../assets/16.jpg",
+      "name": "MOCHA HẠNH NHÂN ĐÁ",
+      "price": "59",
+      "id": 21,
+      "title": "Espresso, chocolate, sữa tươi"
+    }
+  ],
+  "TraiCay": [
+    {
+      "background": "../../assets/17.jpg",
+      "name": "NƯỚC CAM TƯƠI 100%",
+      "price": "65",
+      "id": 21,
+      "title": "Fresh Orange Juice"
+    },
+    {
+      "background": "../../assets/21.jpg",
+      "name": "MOJITO CHANH DÂY",
+      "price": "45",
+      "id": 23,
+      "title": "Chanh dây, Sả, Lá Bạc Hà, Soda"
+    },
+    {
+      "background": "../../assets/18.jpg",
+      "name": "SODA TÁO XANH",
+      "price": "45",
+      "id": 24,
+      "title": "Syrup táo xanh, syrup mojito, táo"
+    },
+    {
+      "background": "../../assets/22.jpg",
+      "name": "SINH TỐ DÂU ỔI",
+      "price": "59",
+      "id": 25,
+      "title": "Mứt dâu-ổi, sữa chua, bánh cookie"
+    },
+    {
+      "background": "../../assets/19.jpg",
+      "name": "SINH TỐ CAM XOÀI",
+      "price": "59",
+      "id": 26,
+      "title": "Mứt cam-xoài, sữa chua, bánh cookie"
+    },
+    {
+      "background": "../../assets/20.jpg",
+      "name": "MOJITO CHANH TƯƠI",
+      "price": "45",
+      "id": 27,
+      "title": "Chanh tươi, Sả, Lá Bạc Hà, Soda"
+    }
+  ],
+  "TraDacBiet": [
+    {
+      "background": "../../assets/menu1.jpg",
+      "name": "MATCHA ĐÁ XAY",
+      "price": "59",
+      "id": 28,
+      "title": "Trà xanh, sữa tươi, kem tươi"
+    },
+    {
+      "background": "../../assets/23.jpg",
+      "name": "TRÀ MATCHA LATTE NÓNG",
+      "price": "45",
+      "id": 29,
+      "title": "Trà xanh, sữa tươi"
+    },
+    {
+      "background": "../../assets/24.jpg",
+      "name": "TRÀ HƯƠNG VỊ BẠC HÀ NÓNG",
+      "price": "35",
+      "id": 30,
+      "title": "Trà thảo mộc hương vị bạc hà"
+    },
+    {
+      "background": "../../assets/1.jpg",
+      "name": "AMERICANO NÓNG",
+      "price": "49",
+      "id": 32,
+      "title": "Espresso, nước nóng"
+    },
+    {
+      "background": "../../assets/2.jpg",
+      "name": "AMERICANO ĐÁ",
+      "price": "49",
+      "id": 33,
+      "title": "Espresso, nước nóng, đá viên"
+    }
+  ],
+  "Gift": [
+    {
+      "background": "../../assets/1.jpg",
+      "name": "COMBO FRIENDS MUG",
+      "price": "230",
+      "id": 34,
+      "title": "Combo Friends Mug"
+    },
+    {
+      "background": "../../assets/5.jpg",
+      "name": "FRIENDS MUG ĐEN",
+      "price": "145",
+      "id": 35,
+      "title": "Friends Mug Đen"
+    },
+    {
+      "background": "../../assets/3.jpg",
+      "name": "FRIENDS MUG TRẮNG",
+      "price": "145",
+      "id": 36,
+      "title": "Friends Mug Trắng"
+    }
+  ]
+}

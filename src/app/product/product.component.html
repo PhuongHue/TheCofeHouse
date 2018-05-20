@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="left">
+    <h2>ĐƠN HÀNG</h2>
+    <div class="img-parttern"></div>
+    <div *ngFor = 'let mon of arrOrder'>
+
+
+    </div>
+
+  </div>
+
+  <div class="right">
+      <div class="anhlogo"></div>
+    <div class="thongtin">        
+        <div class="mauxam">Thông tin người nhận</div>
+        <div class="mauxam">Địa chỉ người nhận</div>
+        <div class="thanhtoan" style="font-size: 13px; ">Phương thức thanh toán</div>
+        <div class="ghichu">
+          <p style="font-size: 13px; ">Ghi chú</p>
+          <textarea name="" id="" cols="60" rows="4" placeholder="Ghi chú"></textarea>
+        </div>
+    </div>
+    
+    <div class="submit" style="cursor: pointer">
+      <button type="button" (click)="orderList()">Đặt hàng</button>
+    </div>
+  </div>
+  <div class="clear-both"></div>
+</div>
