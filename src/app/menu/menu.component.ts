@@ -117,6 +117,7 @@ export class MenuComponent implements OnInit {
     this.hienMonNoiBat.forEach(e => {
       temp = temp + (+e.price);
       console.log(e.price);
+      console.log('1223');
       
     });
     this.giaTien = temp;
