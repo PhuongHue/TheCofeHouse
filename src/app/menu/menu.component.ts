@@ -32,7 +32,7 @@ export class MenuComponent implements OnInit {
   traiCay: TraiCay[];
   traDacBiet: TraDacBiet[];
   gift: Gift[];
-  hienMonNoiBat: TraDacBiet[] = [];
+  hienMonNoiBat = [];
   giaTien = 0;
   arrIdDatHang = [];
 
@@ -96,10 +96,10 @@ export class MenuComponent implements OnInit {
             hoTen: e.hoTen,
             sdt: e.sdt,
             email: e.email,
-            diaChi: e.diachi,
+            diaChi: e.diaChi,
             quanHuyen: e.quanHuyen,
             thanhPho: e.thanhPho
-          }
+          };
           this.thongTinKH = data;
           this.thongTinKH.push(thongtin);
           this.thongTinKH = this.thongTinKH.slice(this.thongTinKH.length - 1, this.thongTinKH.length);
@@ -117,11 +117,8 @@ export class MenuComponent implements OnInit {
     this.hienMonNoiBat.forEach(e => {
       temp = temp + (+e.price);
       console.log(e.price);
-      console.log('1223');
-      
     });
     this.giaTien = temp;
-    
 
   }
 
@@ -175,7 +172,7 @@ export class MenuComponent implements OnInit {
           name: e.name,
           id: e.id,
           title: e.title,
-        }
+        };
         this.hienMonNoiBat.push(mon);
         // this.hienMonNoiBat = this.hienMonNoiBat.slice(this.hienMonNoiBat.length - 1, this.hienMonNoiBat.length);
       }
@@ -184,13 +181,13 @@ export class MenuComponent implements OnInit {
       if (e.id === id) {
         tinhTien = tinhTien + (+e.price);
         // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
-        const mon: MonNoiBat = {
+        const mon: CaPhe = {
           background: e.background,
           price: e.price,
           name: e.name,
           id: e.id,
-          title: e.title,
-        }
+          title: e.title
+        };
         this.hienMonNoiBat.push(mon);
       }
     });
@@ -198,29 +195,60 @@ export class MenuComponent implements OnInit {
       if (e.id === id) {
         tinhTien = tinhTien + (+e.price);
         // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
+        const mon: Socola = {
+          background: e.background,
+          price: e.price,
+          name: e.name,
+          id: e.id,
+          title: e.title
+        };
+        this.hienMonNoiBat.push(mon);
       }
     });
     this.traiCay.forEach(e => {
       if (e.id === id) {
         tinhTien = tinhTien + (+e.price);
         // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
+        const mon: TraiCay = {
+          background: e.background,
+          price: e.price,
+          name: e.name,
+          id: e.id,
+          title: e.title
+        };
+        this.hienMonNoiBat.push(mon);
       }
     });
     this.traDacBiet.forEach(e => {
       if (e.id === id) {
         tinhTien = tinhTien + (+e.price);
         // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
+        const mon: TraDacBiet = {
+          background: e.background,
+          price: e.price,
+          name: e.name,
+          id: e.id,
+          title: e.title
+        };
+        this.hienMonNoiBat.push(mon);
       }
     });
     this.gift.forEach(e => {
       if (e.id === id) {
         tinhTien = tinhTien + (+e.price);
         // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
+        const mon: Gift = {
+          background: e.background,
+          price: e.price,
+          name: e.name,
+          id: e.id,
+          title: e.title
+        };
+        this.hienMonNoiBat.push(mon);
       }
     });
-
   }
-  xoaVaoGioHang(id) {
+  xoaKhoiGioHang(id) {
     let tinhTien = 0;
     this.arrIdDatHang.splice(id);
     this.monNoiBat.forEach(e => {
@@ -267,7 +295,5 @@ export class MenuComponent implements OnInit {
 
       }
     }
-
   }
-
 }

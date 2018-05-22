@@ -25,7 +25,7 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)">
+                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)">
                           <i class="fa fa-minus"></i>
                         </div>
                         <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
@@ -61,7 +61,7 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)">
+                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)">
                           <i class="fa fa-minus"></i>
                         </div>
                         <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
@@ -97,7 +97,7 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)">
+                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)">
                           <i class="fa fa-minus"></i>
                         </div>
                         <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
@@ -133,7 +133,7 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)">
+                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)">
                           <i class="fa fa-minus"></i>
                         </div>
                         <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
@@ -169,7 +169,7 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)">
+                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)">
                           <i class="fa fa-minus"></i>
                         </div>
                         <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
@@ -205,7 +205,7 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)">
+                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)">
                           <i class="fa fa-minus"></i>
                         </div>
                         <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
@@ -226,53 +226,59 @@
       <div class="anhlogo">
 
       </div>
-      
+
       <div class="btn btn-success" (click)="hienThiThongTinURL()">
-          Hien thi thong tin
-        </div>
+        HIỂN THỊ THÔNG TIN
+      </div>
       <div class="wrapper">
         <div class="thongtin">
-        <p class="mauxam1">THÔNG TIN NGƯỜI NHẬN</p>
-        <div class="thongtin-kh" *ngFor="let thongTin of thongTinKH">
-          <div>
-            <span class="mauxam">Họ tên:</span> {{thongTin.hoTen}}
+          <p class="mauxam1">THÔNG TIN NGƯỜI NHẬN</p>
+          <div class="thongtin-kh" *ngFor="let thongTin of thongTinKH">
+            <div>
+              <span class="mauxam">Họ tên: </span>
+              <span>{{thongTin.hoTen}}</span>
+            </div>
+            <div>
+              <span class="mauxam">Số điện thoại: </span>
+              <span>{{thongTin.sdt}}</span>
+            </div>
+            <div>
+              <span class="mauxam">Email: </span>
+              <span>{{thongTin.email}}</span>
+            </div>
           </div>
-          <div>
-            <span class="mauxam">Số điện thoại:</span>{{thongTin.sdt}}
-          </div>
-          <div>
-            <span class="mauxam">Email:</span>{{thongTin.email}}
+        </div>
+
+        <div class="diadiem">
+          <p class="mauxam1">ĐỊA ĐIỂM GIAO HÀNG</p>
+          <div class="thongtin-kh" *ngFor="let thongTin of thongTinKH">
+            <div>
+              <span class="mauxam">Địa chỉ: </span>
+              <span>{{thongTin.diaChi}}</span>
+            </div>
+            <div>
+              <span class="mauxam">Quận: </span>
+              <span>{{thongTin.quanHuyen}}</span>
+            </div>
+            <div>
+              <span class="mauxam">Thành Phố: </span>
+              <span>{{thongTin.thanhPho}}</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="diadiem">
-        <p class="mauxam1">ĐỊA ĐIỂM GIAO HÀNG</p>
-        <div class="thongtin-kh" *ngFor="let thongTin of thongTinKH">
-          <div>
-            <span class="mauxam">Địa chỉ:</span>{{thongTin.diaChi}}
-          </div>
-          <div>
-            <span class="mauxam">Quận: </span>{{thongTin.quanHuyen}}
-          </div>
-          <div>
-            <span class="mauxam">Thành Phố:</span>{{thongTin.thanhPho}}
-          </div>
-        </div>
-      </div>
-      </div>
-      
       <div class="danhsachchon">
         <p class="mauxam1">CÁC MÓN ĐÃ CHỌN</p>
         <div *ngFor="let mon of hienMonNoiBat">
-          {{mon.name}}
+          <span style="font-size: 13px;">{{mon.name}} - {{mon.price}}.000VNĐ</span>
         </div>
-
-        <p>Gia tien la:</p><br>
-        {{giaTien}}
+        
+        <span class="mauxam">Tổng Cộng </span>
+        <span>{{giaTien}}.000 VNĐ</span>
       </div>
       <div class="submit" style="cursor: pointer">
-        <button type="button" (click)="pay()">Thanh Toán</button>
+        <button type="button" [routerLink]="['/product']" (click) = "pay()">Thanh Toán</button>
       </div>
 
     </div>

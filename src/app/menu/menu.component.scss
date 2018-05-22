@@ -90,10 +90,10 @@ p{
 }
 .wrapper{
     display: none;
+    margin-left: 50px;
+    margin-bottom: 30px;
 }
-.thongtin{
-    padding-top: 30px;
-}
+
 .mauxam1{
     color: rgb(82, 80, 80);
     font-weight: bold;
@@ -118,6 +118,10 @@ p{
   }
   .submit{
     width: 100%;
+    margin-top: 20px;
+}
+.diadiem{
+    margin-top: 30px;
 }
 span {
     font-size: 15px;
@@ -295,4 +299,13 @@ i{
     i{
         color: orange;
     }
+}
+.btn{
+    padding: 10px 10px;
+    margin-top: 20px;
+    margin-left: 110px;
+    margin-bottom: 20px;
+}
+.danhsachchon{
+    margin-left: 50px;
 }

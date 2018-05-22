@@ -1,64 +1,6 @@
 {
   "address": [
-    {
-      "hoTen": "nguyentrongdai",
-      "sdt": "1234567890",
-      "email": "nguyentrongdai290197@gmail.com",
-      "diaChi": "esredtrfyguyhijk",
-      "quanHuyen": "rdfghhjkl",
-      "thanhPho": "dtfghjjk",
-      "id": 1
-    },
-    {
-      "hoTen": "truongnvan111",
-      "sdt": "1234567890",
-      "email": "nguyenvan@mfah.com",
-      "diaChi": "esrdxfgcghvjhkjkl",
-      "quanHuyen": "serdfghhjkjkl",
-      "thanhPho": "dfxdcgvhbjkml",
-      "id": 2
-    },
-    {
-      "hoTen": "ngtrdai197",
-      "sdt": "123456789",
-      "email": "nguyentrongdai290197@gmail.com",
-      "diaChi": "sdfghjkjl;l",
-      "quanHuyen": "sredtrfghjkjlk;",
-      "thanhPho": "dfghjkjl;",
-      "id": 3
-    }
-  ],
-  "comment": [
-    {
-      "hoTen": "Đỗ Thị Mỹ Linh",
-      "email": "dothimylinh97ld@gmail.com",
-      "binhLuan": "Hello Linh Hello Huệ",
-      "id": 1
-    },
-    {
-      "hoTen": "Đỗ Thị Mỹ Linh",
-      "email": "dothimylinh97ld@gmail.com",
-      "binhLuan": "Hello Linh Hello Huệ",
-      "id": 2
-    },
-    {
-      "hoTen": "Huệ Điên",
-      "email": "huehue@gmail.com",
-      "binhLuan": "Hello Huệ",
-      "id": 3
-    },
-    {
-      "hoTen": "Linh",
-      "email": "LinhLinh@gmail.com",
-      "binhLuan": "leleleel",
-      "id": 4
-    },
-    {
-      "hoTen": "LnihLinh",
-      "email": "dfghjkhmnhujk@gmail.com",
-      "binhLuan": "dfjhfh",
-      "id": 5
-    }
+   
   ],
   "MonNoiBat": [
     {
