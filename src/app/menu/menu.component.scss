@@ -138,12 +138,13 @@ span {
 .submit button{
     color: #ffffff;    
     text-decoration: none;  
-    padding: 5px 120px;
+    padding: 10px 77px;
     background: orange;
     font-size: 20px; 
     border-radius: 3px;
     border: 1px solid #e2e2e2;
     box-shadow: none;
+    margin-left: 53px;
 }
 .wrapping-listmenu{
     width: 100%;
@@ -154,6 +155,7 @@ span {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 50px;
+   
 }
 .item{
     background-color: rgb(255, 255, 255);
@@ -161,16 +163,16 @@ span {
     border-radius: 3px;
 }
 .item:hover{
-    background-color: rgb(250, 216, 154);
-    border: #e2e2e2;
+    background-color: wheat;
+    // border: #e2e2e2;
 }
 .titleMenu1, .titleMenu2, .titleMenu3, .titleMenu4, .titleMenu5, .titleMenu6{
     text-align: left;
     padding-top: 10px;
-    color: rgba(194, 126, 0, 0.904);
+    color: rgb(255, 166, 0);
     font-size: 15px;
     font-weight: bold;
-    height: 40px;
+    height: 50px;
     margin-left: 30px;
 }
 .listItem1, .listItem2, .listItem3, .listItem4, .listItem5, .listItem6{
@@ -308,4 +310,5 @@ i{
 }
 .danhsachchon{
     margin-left: 50px;
+   
 }

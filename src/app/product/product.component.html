@@ -11,12 +11,57 @@
 
   <div class="right">
       <div class="anhlogo"></div>
-    <div class="thongtin">        
-        <div class="mauxam">Thông tin người nhận</div>
-        <div class="mauxam">Địa chỉ người nhận</div>
-        <div class="thanhtoan" style="font-size: 13px; ">Phương thức thanh toán</div>
+    <div >
+        <div class="btn btn-warning" (click)="hienThiThongTinURL()">
+            HIỂN THỊ THÔNG TIN
+          </div>          
+          <div class="wrapper">
+              <div class="thongtin">
+                  <div class="mauxam1">Thông tin người nhận</div>
+                  <div class="thongtin-kh" *ngFor="let thongTin of thongTinKH">
+                      <div>
+                        <span class="mauxam">Họ tên: </span>
+                        <span>{{thongTin.hoTen}}</span>
+                      </div>
+                      <div>
+                        <span class="mauxam">Số điện thoại: </span>
+                        <span>{{thongTin.sdt}}</span>
+                      </div>
+                      <div>
+                        <span class="mauxam">Email: </span>
+                        <span>{{thongTin.email}}</span>
+                      </div>
+                    </div>
+              </div>
+
+              <div class="diadiem">
+                <p class="mauxam1">ĐỊA CHỈ NGƯỜI NHẬN</p>
+                <div class="thongtin-kh" *ngFor="let thongTin of thongTinKH">
+                  <div>
+                    <span class="mauxam">Địa chỉ: </span>
+                    <span>{{thongTin.diaChi}}</span>
+                  </div>
+                  <div>
+                    <span class="mauxam">Quận: </span>
+                    <span>{{thongTin.quanHuyen}}</span>
+                  </div>
+                  <div>
+                    <span class="mauxam">Thành Phố: </span>
+                    <span>{{thongTin.thanhPho}}</span>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+
+        <div class="thanhtoan" style="font-size: 13px; ">Phương thức thanh toán: <br>
+          <input  type="radio" name="method" > Thanh toán khi nhận hàng <br>
+         <input  type="radio" name="method">VISA<span><img src="./../../assets/visa.png" alt=""></span> <br>
+         <input  type="radio" name="method" > Thẻ ATM nội địa <br>
+        </div>
+        <br>
         <div class="ghichu">
-          <p style="font-size: 13px; ">Ghi chú</p>
+          <p style="font-size: 15px; ">Ghi chú đơn đặt hàng:</p>
           <textarea name="" id="" cols="60" rows="4" placeholder="Ghi chú"></textarea>
         </div>
     </div>

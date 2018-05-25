@@ -25,10 +25,10 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)">
+                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)" (click) = "pay()">
                           <i class="fa fa-minus"></i>
                         </div>
-                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click) = "pay()">
                           <i class="fa fa-plus"></i>
                         </div>
                       </div>
@@ -61,10 +61,10 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)">
+                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)" (click) = "pay()">
                           <i class="fa fa-minus"></i>
                         </div>
-                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click) = "pay()">
                           <i class="fa fa-plus"></i>
                         </div>
                       </div>
@@ -97,10 +97,10 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)">
+                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)" (click) = "pay()">
                           <i class="fa fa-minus"></i>
                         </div>
-                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click) = "pay()">
                           <i class="fa fa-plus"></i>
                         </div>
                       </div>
@@ -133,10 +133,10 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)">
+                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)" (click) = "pay()">
                           <i class="fa fa-minus"></i>
                         </div>
-                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click) = "pay()">
                           <i class="fa fa-plus"></i>
                         </div>
                       </div>
@@ -169,10 +169,10 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)">
+                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)" (click) = "pay()">
                           <i class="fa fa-minus"></i>
                         </div>
-                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click) = "pay()">
                           <i class="fa fa-plus"></i>
                         </div>
                       </div>
@@ -205,10 +205,10 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)">
+                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)" (click) = "pay()">
                           <i class="fa fa-minus"></i>
                         </div>
-                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click) = "pay()">
                           <i class="fa fa-plus"></i>
                         </div>
                       </div>
@@ -224,14 +224,13 @@
     </div>
     <div class="right">
       <div class="anhlogo">
-
       </div>
 
       <div class="btn btn-success" (click)="hienThiThongTinURL()">
         HIỂN THỊ THÔNG TIN
       </div>
       <div class="wrapper">
-        <div class="thongtin">
+        <div class="thongtin">  
           <p class="mauxam1">THÔNG TIN NGƯỜI NHẬN</p>
           <div class="thongtin-kh" *ngFor="let thongTin of thongTinKH">
             <div>
@@ -278,7 +277,7 @@
         <span>{{giaTien}}.000 VNĐ</span>
       </div>
       <div class="submit" style="cursor: pointer">
-        <button type="button" [routerLink]="['/product']" (click) = "pay()">Thanh Toán</button>
+        <button type="button" [routerLink] = "['/product']">Thanh Toán</button>
       </div>
 
     </div>

@@ -12,6 +12,7 @@ import { TraiCay } from '../interface/traicay';
 import { TraDacBiet } from '../interface/tradacbiet';
 import { Gift } from '../interface/gift';
 import { ThongTinKH } from '../interface/thongtinkh';
+import { forEach } from '@angular/router/src/utils/collection';
 
 declare var $: any;
 
@@ -32,7 +33,7 @@ export class MenuComponent implements OnInit {
   traiCay: TraiCay[];
   traDacBiet: TraDacBiet[];
   gift: Gift[];
-  hienMonNoiBat = [];
+  hienMonNoiBat: MonNoiBat[] = [];
   giaTien = 0;
   arrIdDatHang = [];
 
@@ -119,11 +120,7 @@ export class MenuComponent implements OnInit {
       console.log(e.price);
     });
     this.giaTien = temp;
-
   }
-
-  // getThongTinKhachHang() {
-  // }
   getMonNoiBat() {
     this.thongtinsp.getMonNoiBat().subscribe(data => {
       this.monNoiBat = data;
@@ -157,13 +154,11 @@ export class MenuComponent implements OnInit {
   }
 
   public themVaoGioHang(id) {
-    let tinhTien = 0;
+    // let tinhTien = 0;
     this.arrIdDatHang.push(id);
     this.thongtinsp.addThemGioHang(this.arrIdDatHang);
-    console.log(this.arrIdDatHang);
     this.monNoiBat.forEach(e => {
       if (e.id === id) {
-        tinhTien = tinhTien + (+e.price);
         // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
         // console.log(e.name);
         const mon: MonNoiBat = {
@@ -179,121 +174,79 @@ export class MenuComponent implements OnInit {
     });
     this.caPhe.forEach(e => {
       if (e.id === id) {
-        tinhTien = tinhTien + (+e.price);
         // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
         const mon: CaPhe = {
           background: e.background,
           price: e.price,
           name: e.name,
           id: e.id,
-          title: e.title
+          title: e.title,
         };
         this.hienMonNoiBat.push(mon);
       }
     });
     this.socola.forEach(e => {
       if (e.id === id) {
-        tinhTien = tinhTien + (+e.price);
         // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
         const mon: Socola = {
           background: e.background,
           price: e.price,
           name: e.name,
           id: e.id,
-          title: e.title
+          title: e.title,
         };
         this.hienMonNoiBat.push(mon);
       }
     });
     this.traiCay.forEach(e => {
       if (e.id === id) {
-        tinhTien = tinhTien + (+e.price);
-        // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
         const mon: TraiCay = {
           background: e.background,
           price: e.price,
           name: e.name,
           id: e.id,
-          title: e.title
+          title: e.title,
         };
         this.hienMonNoiBat.push(mon);
       }
     });
     this.traDacBiet.forEach(e => {
       if (e.id === id) {
-        tinhTien = tinhTien + (+e.price);
-        // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
         const mon: TraDacBiet = {
           background: e.background,
           price: e.price,
           name: e.name,
           id: e.id,
-          title: e.title
+          title: e.title,
         };
         this.hienMonNoiBat.push(mon);
       }
     });
     this.gift.forEach(e => {
       if (e.id === id) {
-        tinhTien = tinhTien + (+e.price);
-        // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
         const mon: Gift = {
           background: e.background,
           price: e.price,
           name: e.name,
           id: e.id,
-          title: e.title
+          title: e.title,
         };
         this.hienMonNoiBat.push(mon);
       }
     });
-  }
-  xoaKhoiGioHang(id) {
-    let tinhTien = 0;
-    this.arrIdDatHang.splice(id);
-    this.monNoiBat.forEach(e => {
-      if (e.id === id) {
-        tinhTien = tinhTien - (+e.price);
-        // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
 
-      }
-    });
-    this.caPhe.forEach(e => {
-      if (e.id === id) {
-        tinhTien = tinhTien - (+e.price);
-        // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
-      }
-    });
-    this.socola.forEach(e => {
-      if (e.id === id) {
-        tinhTien = tinhTien - (+e.price);
-        // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
-      }
-    });
-    this.traiCay.forEach(e => {
-      if (e.id === id) {
-        tinhTien = tinhTien - (+e.price);
-        // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
-      }
-    });
-    this.traDacBiet.forEach(e => {
-      if (e.id === id) {
-        tinhTien = tinhTien - (+e.price);
-        // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
-      }
-    });
-    this.gift.forEach(e => {
-      if (e.id === id) {
-        tinhTien = tinhTien - (+e.price);
-        // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
-      }
-    });
+  }
+  xoaVaoGioHang(id) {
+    let pos = 0;
+    let check = false;
     for (let i = 0; i < this.hienMonNoiBat.length; i++) {
       if (this.hienMonNoiBat[i].id === id) {
-        this.hienMonNoiBat.splice(i, 1);
-        // console.log(this.hienMonNoiBat[i]);
-
+        pos = i;
+        check = true;
       }
+    }
+    if (check === true) {
+      this.hienMonNoiBat.splice(pos, 1);
     }
   }
 }

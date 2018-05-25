@@ -43,5 +43,4 @@ export class ThongtinspService {
   addThemGioHang(arrIdHang) {
     return this.datHang.next(arrIdHang);
   }
-
 }
