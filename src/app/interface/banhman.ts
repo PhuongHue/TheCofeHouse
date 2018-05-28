@@ -1,4 +1,4 @@
-export interface TraDacBiet {
+export interface BanhMan {
     background: string;
     price: string;
     name: string;

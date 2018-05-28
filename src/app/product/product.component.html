@@ -1,71 +1,98 @@
 <div class="container">
   <div class="left">
-    <h2>ĐƠN HÀNG</h2>
+    <h2 class="mauxam1">ĐƠN HÀNG</h2>
     <div class="img-parttern"></div>
-    <div *ngFor = 'let mon of arrOrder'>
-
-
+    <div class="DSMon" *ngFor='let mon of monDaDat'>
+      <p class="tenmon">{{mon.name}}</p>
+      <p class="mauxam giamon">{{mon.price}}.000 VNĐ</p>
+      <div class="clear-both"></div>
     </div>
-
+    <hr style="width: 80%; margin-left: 80px">
+    <div class="sotien">
+      <p class="mauxam" style="float: left; font-size: 23px">THÀNH TIỀN</p>
+      <p class="mauxam" style="font-size: 23px; float: right; margin-right: 100px">{{giaTien}}.000 VNĐ</p>
+      <div class="clear-both"></div>
+    </div>
+    <hr style="width: 80%; margin-left: 80px">
+    <div class="submit1" style="cursor: pointer">
+      <button type="button" [routerLink] = "['/menu']" >Tiếp tục mua hàng</button>
+    </div>
   </div>
 
   <div class="right">
-      <div class="anhlogo"></div>
-    <div >
-        <div class="btn btn-warning" (click)="hienThiThongTinURL()">
-            HIỂN THỊ THÔNG TIN
-          </div>          
-          <div class="wrapper">
-              <div class="thongtin">
-                  <div class="mauxam1">Thông tin người nhận</div>
-                  <div class="thongtin-kh" *ngFor="let thongTin of thongTinKH">
-                      <div>
-                        <span class="mauxam">Họ tên: </span>
-                        <span>{{thongTin.hoTen}}</span>
-                      </div>
-                      <div>
-                        <span class="mauxam">Số điện thoại: </span>
-                        <span>{{thongTin.sdt}}</span>
-                      </div>
-                      <div>
-                        <span class="mauxam">Email: </span>
-                        <span>{{thongTin.email}}</span>
-                      </div>
-                    </div>
-              </div>
-
-              <div class="diadiem">
-                <p class="mauxam1">ĐỊA CHỈ NGƯỜI NHẬN</p>
-                <div class="thongtin-kh" *ngFor="let thongTin of thongTinKH">
-                  <div>
-                    <span class="mauxam">Địa chỉ: </span>
-                    <span>{{thongTin.diaChi}}</span>
-                  </div>
-                  <div>
-                    <span class="mauxam">Quận: </span>
-                    <span>{{thongTin.quanHuyen}}</span>
-                  </div>
-                  <div>
-                    <span class="mauxam">Thành Phố: </span>
-                    <span>{{thongTin.thanhPho}}</span>
-                  </div>
-                </div>
-              </div>
-        </div>
-
-
-        <div class="thanhtoan" style="font-size: 13px; ">Phương thức thanh toán: <br>
-          <input  type="radio" name="method" > Thanh toán khi nhận hàng <br>
-         <input  type="radio" name="method">VISA<span><img src="./../../assets/visa.png" alt=""></span> <br>
-         <input  type="radio" name="method" > Thẻ ATM nội địa <br>
-        </div>
-        <br>
-        <div class="ghichu">
-          <p style="font-size: 15px; ">Ghi chú đơn đặt hàng:</p>
-          <textarea name="" id="" cols="60" rows="4" placeholder="Ghi chú"></textarea>
-        </div>
+    <div class="anhlogo"></div>
+    <div class="btn btn-success" (click)="hienThiThongTinURL()">
+      HIỂN THỊ THÔNG TIN
     </div>
-    
+    <div class="wrapper">
+      <div class="thongtin">
+        <p class="mauxam1">THÔNG TIN NGƯỜI NHẬN</p>
+        <div class="thongtin-kh" *ngFor="let thongTin of thongTinKH">
+          <div>
+            <span class="mauxam">Họ tên: </span>
+            <span>{{thongTin.hoTen}}</span>
+          </div>
+          <div>
+            <span class="mauxam">Số điện thoại: </span>
+            <span>{{thongTin.sdt}}</span>
+          </div>
+          <div>
+            <span class="mauxam">Email: </span>
+            <span>{{thongTin.email}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="diadiem">
+        <p class="mauxam1">ĐỊA CHỈ NGƯỜI NHẬN</p>
+        <div class="thongtin-kh" *ngFor="let thongTin of thongTinKH">
+          <div>
+            <span class="mauxam">Địa chỉ: </span>
+            <span>{{thongTin.diaChi}}</span>
+          </div>
+          <div>
+            <span class="mauxam">Quận: </span>
+            <span>{{thongTin.quanHuyen}}</span>
+          </div>
+          <div>
+            <span class="mauxam">Thành Phố: </span>
+            <span>{{thongTin.thanhPho}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="thanhtoan" style="font-size: 15px; ">
+      <p class="mauxam1">PHƯƠNG THỨC THANH TOÁN</p>
+    </div>
+    <label class="container1 mauxam1">Thanh toán khi nhận hàng
+      <input type="radio" checked="checked" name="radio">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container1 mauxam1">
+      <!-- <img src="../../assets/visa.png" alt="">
+      <img src="../../assets/mas.png" alt="">
+      <img src="../../assets/jcb.png" alt="" srcset=""> -->
+      <img src="../../assets/moca.png" alt="" srcset="">
+      <input type="radio" name="radio">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container1 mauxam1">Thẻ ATM nội địa
+      <input type="radio" name="radio">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container1 mauxam1">Ví MoMo
+      <!-- <img src="../../assets/momo.jpg" alt="" srcset=""> -->
+      <input type="radio" name="radio">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container1 mauxam1">ZaloPay
+      <input type="radio" name="radio">
+      <span class="checkmark"></span>
+    </label>
+    <!-- <div class="ghichu">
+      <p class = "mauxam1" style="font-size: 15px; ">Ghi chú</p>
+      <textarea name="" id="" cols="60" rows="4" placeholder="Ghi chú"></textarea>
+    </div> -->
+
     <div class="submit" style="cursor: pointer">
       <button type="button" (click)="orderList()">Đặt hàng</button>
     </div>

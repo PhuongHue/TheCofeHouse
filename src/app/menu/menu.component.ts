@@ -13,6 +13,10 @@ import { TraDacBiet } from '../interface/tradacbiet';
 import { Gift } from '../interface/gift';
 import { ThongTinKH } from '../interface/thongtinkh';
 import { forEach } from '@angular/router/src/utils/collection';
+import { GiaTien } from '../interface/giatien';
+import { BanhNgot } from '../interface/banhngot';
+import { BanhMan } from '../interface/banhman';
+import { MonDaDat } from '../interface/monandadat';
 
 declare var $: any;
 
@@ -32,8 +36,11 @@ export class MenuComponent implements OnInit {
   socola: Socola[];
   traiCay: TraiCay[];
   traDacBiet: TraDacBiet[];
+  banhNgot: BanhNgot[];
+  banhMan: BanhMan[];
   gift: Gift[];
-  hienMonNoiBat: MonNoiBat[] = [];
+  sotienurl: GiaTien[];
+  hienMonNoiBat = [];
   giaTien = 0;
   arrIdDatHang = [];
 
@@ -64,6 +71,12 @@ export class MenuComponent implements OnInit {
     $('.titleMenu6').click(function () {
       $('.listItem6').slideToggle();
     });
+    $('.titleMenu7').click(function () {
+      $('.listItem7').slideToggle();
+    });
+    $('.titleMenu8').click(function () {
+      $('.listItem8').slideToggle();
+    });
     this.thongtinsp.getDatHang().subscribe(dataDatHang => {
       const danhSachSanPham = dataDatHang;
     });
@@ -72,17 +85,41 @@ export class MenuComponent implements OnInit {
     this.getSocola();
     this.getTraiCay();
     this.getTraDacBiet();
+    this.getBanhNgot();
+    this.getBanhMan();
     this.getGift();
-
-
+    this.getMonDaDat();
+    this.hienThiTien();
   }
 
-
+  hienThiTien() {
+    this.thongtinsp.getSoTienDaMua().subscribe(data => {
+      const arr = data;
+      let max = 0;
+      arr.forEach(e => {
+        if (e.id > max) {
+          max = e.id;
+        }
+      });
+      arr.forEach(e => {
+        if (e.id === max) {
+          const money: GiaTien = {
+            sotien: e.sotien,
+          };
+          this.sotienurl = data;
+          this.sotienurl.push(money);
+          this.sotienurl = this.sotienurl.slice(this.sotienurl.length - 1, this.sotienurl.length);
+        }
+      });
+      arr.forEach(e => {
+        if (e.id === max) {
+          this.giaTien = e.sotien;
+        }
+      });
+    });
+  }
   // Lấy thông tin thừ server
   hienThiThongTinURL() {
-    // this.thongtinkh.getThongTinKHtuServer().subscribe(data => {
-    //   this.thongTinKH = data;
-    // });
     this.thongtinkh.getThongTinKHtuServer().subscribe(data => {
       const arr = data;
       let max = 0;
@@ -109,22 +146,23 @@ export class MenuComponent implements OnInit {
       });
     });
     $('.wrapper').slideToggle();
-
-
   }
 
   pay() {
     let temp = 0;
     this.hienMonNoiBat.forEach(e => {
       temp = temp + (+e.price);
-      console.log(e.price);
+      this.giaTien = temp;
     });
-    this.giaTien = temp;
+    const giatien: GiaTien = {
+      sotien: this.giaTien,
+    };
+    this.thongtinsp.postSoTienDaMua(giatien).subscribe();
+    console.log(this.giaTien);
   }
   getMonNoiBat() {
     this.thongtinsp.getMonNoiBat().subscribe(data => {
       this.monNoiBat = data;
-      // this.hienMonNoiBat = data;
     });
   }
   getCaPhe() {
@@ -147,42 +185,65 @@ export class MenuComponent implements OnInit {
       this.traDacBiet = data;
     });
   }
+  getBanhNgot() {
+    this.thongtinsp.getBanhNgot().subscribe(data => {
+      this.banhNgot = data;
+    });
+  }
+  getBanhMan() {
+    this.thongtinsp.getBanhMan().subscribe(data => {
+      this.banhMan = data;
+    });
+  }
   getGift() {
     this.thongtinsp.getGift().subscribe(data => {
       this.gift = data;
     });
   }
-
+  getMonDaDat() {
+    this.thongtinsp.getThongTinMonDaDat().subscribe(data => {
+      this.hienMonNoiBat = data;
+    });
+  }
   public themVaoGioHang(id) {
-    // let tinhTien = 0;
+    let dem1 = 0;
+    const dem2 = 0;
+    const dem3 = 0;
+    const dem4 = 0;
+    const dem5 = 0;
+    const dem6 = 0;
+    const dem7 = 0;
+    const dem8 = 0;
     this.arrIdDatHang.push(id);
     this.thongtinsp.addThemGioHang(this.arrIdDatHang);
     this.monNoiBat.forEach(e => {
       if (e.id === id) {
-        // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
-        // console.log(e.name);
+        dem1 += 1;
         const mon: MonNoiBat = {
           background: e.background,
           price: e.price,
           name: e.name,
           id: e.id,
           title: e.title,
+          count: dem1,
         };
+        console.log(mon.count);
         this.hienMonNoiBat.push(mon);
-        // this.hienMonNoiBat = this.hienMonNoiBat.slice(this.hienMonNoiBat.length - 1, this.hienMonNoiBat.length);
+        this.thongtinsp.postThongTinMonDaDat(mon).subscribe();
       }
     });
     this.caPhe.forEach(e => {
       if (e.id === id) {
-        // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
         const mon: CaPhe = {
           background: e.background,
           price: e.price,
           name: e.name,
           id: e.id,
           title: e.title,
+          count: dem1 + 1,
         };
         this.hienMonNoiBat.push(mon);
+        this.thongtinsp.postThongTinMonDaDat(mon).subscribe();
       }
     });
     this.socola.forEach(e => {
@@ -194,8 +255,10 @@ export class MenuComponent implements OnInit {
           name: e.name,
           id: e.id,
           title: e.title,
+          count: dem3 + 1,
         };
         this.hienMonNoiBat.push(mon);
+        this.thongtinsp.postThongTinMonDaDat(mon).subscribe();
       }
     });
     this.traiCay.forEach(e => {
@@ -206,8 +269,10 @@ export class MenuComponent implements OnInit {
           name: e.name,
           id: e.id,
           title: e.title,
+          count: e.count + 1,
         };
         this.hienMonNoiBat.push(mon);
+        this.thongtinsp.postThongTinMonDaDat(mon).subscribe();
       }
     });
     this.traDacBiet.forEach(e => {
@@ -218,8 +283,38 @@ export class MenuComponent implements OnInit {
           name: e.name,
           id: e.id,
           title: e.title,
+          count: e.count + 1,
         };
         this.hienMonNoiBat.push(mon);
+        this.thongtinsp.postThongTinMonDaDat(mon).subscribe();
+      }
+    });
+    this.banhNgot.forEach(e => {
+      if (e.id === id) {
+        const mon: BanhNgot = {
+          background: e.background,
+          price: e.price,
+          name: e.name,
+          id: e.id,
+          title: e.title,
+          count: e.count + 1,
+        };
+        this.hienMonNoiBat.push(mon);
+        this.thongtinsp.postThongTinMonDaDat(mon).subscribe();
+      }
+    });
+    this.banhMan.forEach(e => {
+      if (e.id === id) {
+        const mon: BanhMan = {
+          background: e.background,
+          price: e.price,
+          name: e.name,
+          id: e.id,
+          title: e.title,
+          count: e.count + 1,
+        };
+        this.hienMonNoiBat.push(mon);
+        this.thongtinsp.postThongTinMonDaDat(mon).subscribe();
       }
     });
     this.gift.forEach(e => {
@@ -230,8 +325,10 @@ export class MenuComponent implements OnInit {
           name: e.name,
           id: e.id,
           title: e.title,
+          count: e.count + 1,
         };
         this.hienMonNoiBat.push(mon);
+        this.thongtinsp.postThongTinMonDaDat(mon).subscribe();
       }
     });
 
@@ -247,6 +344,7 @@ export class MenuComponent implements OnInit {
     }
     if (check === true) {
       this.hienMonNoiBat.splice(pos, 1);
+      this.thongtinsp.deleteHero(id).subscribe();
     }
   }
 }

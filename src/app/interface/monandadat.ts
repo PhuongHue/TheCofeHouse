@@ -1,4 +1,4 @@
-export interface TraDacBiet {
+export interface MonDaDat {
     background: string;
     price: string;
     name: string;

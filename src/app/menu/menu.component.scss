@@ -33,7 +33,7 @@ h2{
     width: 35%;
     height: 100vh;
     float: right;
-    padding-top: 50px;
+    padding-top: 35px;
     padding-left: 30px;
 }
 form{
@@ -155,7 +155,6 @@ span {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 50px;
-   
 }
 .item{
     background-color: rgb(255, 255, 255);
@@ -166,7 +165,7 @@ span {
     background-color: wheat;
     // border: #e2e2e2;
 }
-.titleMenu1, .titleMenu2, .titleMenu3, .titleMenu4, .titleMenu5, .titleMenu6{
+.titleMenu1, .titleMenu2, .titleMenu3, .titleMenu4, .titleMenu5, .titleMenu6, .titleMenu7, .titleMenu8{
     text-align: left;
     padding-top: 10px;
     color: rgb(255, 166, 0);
@@ -175,7 +174,7 @@ span {
     height: 50px;
     margin-left: 30px;
 }
-.listItem1, .listItem2, .listItem3, .listItem4, .listItem5, .listItem6{
+.listItem1, .listItem2, .listItem3, .listItem4, .listItem5, .listItem6, .listItem7, .listItem8{
     display: none;
     background-color: #ffffff;
     font-size: 17px;
@@ -310,5 +309,4 @@ i{
 }
 .danhsachchon{
     margin-left: 50px;
-   
 }

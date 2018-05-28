@@ -64,7 +64,7 @@ export class OrderComponent implements OnInit {
     );
     // console.log(this.orderForm.value);
 
-    // Đưa thông tin của khách hàng từ form lên server
+    // Đưa thông tin của khách hàng từ form lên localhost
     const thongTin: ThongTinKH = {
       hoTen: this.name,
       sdt: this.phoneNumber,
@@ -118,4 +118,3 @@ export class OrderComponent implements OnInit {
     });
   }
 }
-

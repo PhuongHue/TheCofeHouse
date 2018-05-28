@@ -1,7 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { HttpClient } from '@angular/common/http';
+import { MonDaDat } from '../interface/monandadat';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { GiaTien } from '../interface/giatien';
+
+// import { throwError } from 'rxjs/Rx';
+import { catchError, retry } from 'rxjs/operators';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'my-auth-token'
+  })
+};
+
 
 @Injectable()
 export class ThongtinspService {
@@ -15,8 +28,11 @@ export class ThongtinspService {
   private urlSocola = 'http://localhost:3000/socola';
   private urlTraiCay = 'http://localhost:3000/TraiCay';
   private urlTraDacBiet = 'http://localhost:3000/TraDacBiet';
+  private urlBanhNgot = 'http://localhost:3000/BanhNgot';
+  private urlBanhMan = 'http://localhost:3000/BanhMan';
   private urlGift = 'http://localhost:3000/Gift';
-
+  private urlMonDaDat = 'http://localhost:3000/mondadat';
+  private urlGiaTien = 'http://localhost:3000/giatien';
 
   getMonNoiBat(): any {
     return this.http.get(this.urlMonNoiBat);
@@ -33,6 +49,12 @@ export class ThongtinspService {
   getTraDacBiet(): any {
     return this.http.get(this.urlTraDacBiet);
   }
+  getBanhNgot(): any {
+    return this.http.get(this.urlBanhNgot);
+  }
+  getBanhMan(): any {
+    return this.http.get(this.urlBanhMan);
+  }
   getGift(): any {
     return this.http.get(this.urlGift);
   }
@@ -42,5 +64,33 @@ export class ThongtinspService {
 
   addThemGioHang(arrIdHang) {
     return this.datHang.next(arrIdHang);
+  }
+
+  // Đưa món đã đặt lên localhost
+  postThongTinMonDaDat(ttma: MonDaDat): Observable<MonDaDat> {
+    return this.http.post<MonDaDat>(this.urlMonDaDat, ttma, httpOptions);
+  }
+  // Lấy về từ localhost
+  getThongTinMonDaDat(): any {
+    return this.http.get(this.urlMonDaDat);
+  }
+
+  // Đưa số tiền đã mua lên localhost
+  postSoTienDaMua(ttst: GiaTien): Observable<GiaTien> {
+    return this.http.post<GiaTien>(this.urlGiaTien, ttst, httpOptions);
+  }
+
+  // Lấy sô tiền về
+  getSoTienDaMua(): any {
+    return this.http.get(this.urlGiaTien);
+  }
+
+  /** DELETE: delete the hero from the server */
+  deleteHero (id: number): Observable<{}> {
+    const url = `${this.urlMonDaDat}/${id}`; // DELETE api/heroes/42
+    return this.http.delete(url, httpOptions);
+      // .pipe(
+      //   catchError(this.handleError('deleteHero'))
+      // );
   }
 }

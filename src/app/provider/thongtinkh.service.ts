@@ -21,12 +21,12 @@ export class ThongtinkhService {
     private http: HttpClient,
   ) { }
 
-  // đưa thông tin lên server
+  // đưa thông tin lên localhost
   postThongTinKH(ttKH: ThongTinKH): Observable<ThongTinKH> {
     return this.http.post<ThongTinKH>(this.API_KH, ttKH, httpOptions);
   }
 
-// lấy từ server về
+// lấy từ localhost về
   getThongTinKHtuServer(): any {
     return this.http.get(this.API_KH);
   }

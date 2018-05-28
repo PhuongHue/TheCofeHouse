@@ -4,4 +4,5 @@ export interface Socola {
     name: string;
     id: number;
     title: string;
+    count: number;
 }

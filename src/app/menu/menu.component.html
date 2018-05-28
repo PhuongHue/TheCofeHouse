@@ -25,10 +25,10 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)" (click) = "pay()">
+                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)" (click)="pay()">
                           <i class="fa fa-minus"></i>
                         </div>
-                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click) = "pay()">
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click)="pay()">
                           <i class="fa fa-plus"></i>
                         </div>
                       </div>
@@ -61,10 +61,10 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)" (click) = "pay()">
+                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)" (click)="pay()">
                           <i class="fa fa-minus"></i>
                         </div>
-                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click) = "pay()">
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click)="pay()">
                           <i class="fa fa-plus"></i>
                         </div>
                       </div>
@@ -97,10 +97,10 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)" (click) = "pay()">
+                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)" (click)="pay()">
                           <i class="fa fa-minus"></i>
                         </div>
-                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click) = "pay()">
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click)="pay()">
                           <i class="fa fa-plus"></i>
                         </div>
                       </div>
@@ -133,10 +133,10 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)" (click) = "pay()">
+                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)" (click)="pay()">
                           <i class="fa fa-minus"></i>
                         </div>
-                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click) = "pay()">
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click)="pay()">
                           <i class="fa fa-plus"></i>
                         </div>
                       </div>
@@ -169,10 +169,10 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)" (click) = "pay()">
+                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)" (click)="pay()">
                           <i class="fa fa-minus"></i>
                         </div>
-                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click) = "pay()">
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click)="pay()">
                           <i class="fa fa-plus"></i>
                         </div>
                       </div>
@@ -183,12 +183,81 @@
               <div class="clear-both"></div>
             </div>
           </div>
-
           <div class="item" style="cursor: pointer;">
-            <div class="titleMenu6">Gift
+            <div class="titleMenu6">Bánh ngọt
               <span class="caret"></span>
             </div>
             <div class="listItem6">
+              <div *ngFor="let mon of banhNgot">
+                <div class="item-box">
+                  <div class="item-box-content">
+                    <div class="menu-item">
+                      <div class="item-thumbnail-container">
+                        <img [src]='mon.background' alt="" srcset="">
+                        <div class="menu-item-name">
+                          <span class="name_item">
+                            {{mon.name}} - {{mon.price}}K
+                          </span>
+                        </div>
+                      </div>
+                      <div class="menu-item-desc">{{mon.title}}</div>
+                    </div>
+                    <div class="variants-container">
+                      <div class="row add_remove">
+                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)" (click)="pay()">
+                          <i class="fa fa-minus"></i>
+                        </div>
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click)="pay()">
+                          <i class="fa fa-plus"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear-both"></div>
+            </div>
+          </div>
+          <div class="item" style="cursor: pointer;">
+            <div class="titleMenu7">Bánh mặn
+              <span class="caret"></span>
+            </div>
+            <div class="listItem7">
+              <div *ngFor="let mon of banhMan">
+                <div class="item-box">
+                  <div class="item-box-content">
+                    <div class="menu-item">
+                      <div class="item-thumbnail-container">
+                        <img [src]='mon.background' alt="" srcset="">
+                        <div class="menu-item-name">
+                          <span class="name_item">
+                            {{mon.name}} - {{mon.price}}K
+                          </span>
+                        </div>
+                      </div>
+                      <div class="menu-item-desc">{{mon.title}}</div>
+                    </div>
+                    <div class="variants-container">
+                      <div class="row add_remove">
+                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)" (click)="pay()">
+                          <i class="fa fa-minus"></i>
+                        </div>
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click)="pay()">
+                          <i class="fa fa-plus"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear-both"></div>
+            </div>
+          </div>
+          <div class="item" style="cursor: pointer;">
+            <div class="titleMenu8">Gift
+              <span class="caret"></span>
+            </div>
+            <div class="listItem8">
               <div *ngFor="let mon of gift">
                 <div class="item-box">
                   <div class="item-box-content">
@@ -205,10 +274,10 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)" (click) = "pay()">
+                        <div class="col-md-6 remove" (click)="xoaVaoGioHang(mon.id)" (click)="pay()">
                           <i class="fa fa-minus"></i>
                         </div>
-                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click) = "pay()">
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click)="pay()">
                           <i class="fa fa-plus"></i>
                         </div>
                       </div>
@@ -223,14 +292,12 @@
       </div>
     </div>
     <div class="right">
-      <div class="anhlogo">
-      </div>
-
+      <div class="anhlogo"></div>
       <div class="btn btn-success" (click)="hienThiThongTinURL()">
         HIỂN THỊ THÔNG TIN
       </div>
       <div class="wrapper">
-        <div class="thongtin">  
+        <div class="thongtin">
           <p class="mauxam1">THÔNG TIN NGƯỜI NHẬN</p>
           <div class="thongtin-kh" *ngFor="let thongTin of thongTinKH">
             <div>
@@ -272,12 +339,21 @@
         <div *ngFor="let mon of hienMonNoiBat">
           <span style="font-size: 13px;">{{mon.name}} - {{mon.price}}.000VNĐ</span>
         </div>
+
+        <span class="mauxam">THÀNH TIỀN : </span>
+        <br>
+        <span *ngIf = "hienMonNoiBat.length != 0">{{giaTien}}.000 VNĐ </span>
+        <span *ngIf = "hienMonNoiBat.length == 0">0.000 VNĐ </span>
+        <br>
+        <!-- <span *ngFor="let tien of sotienurl">
+          {{tien.sotien}}.000 VNĐ
+          
+        </span> -->
         
-        <span class="mauxam">Tổng Cộng </span>
-        <span>{{giaTien}}.000 VNĐ</span>
+        
       </div>
       <div class="submit" style="cursor: pointer">
-        <button type="button" [routerLink] = "['/product']">Thanh Toán</button>
+        <button type="button" [routerLink]="['/product']">Thanh Toán</button>
       </div>
 
     </div>

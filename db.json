@@ -1,22 +1,312 @@
 {
   "address": [
     {
-      "hoTen": "asf",
-      "sdt": "0966176286",
-      "email": "phuonghue199997@gmail.com",
-      "diaChi": "ádf",
-      "quanHuyen": "8",
-      "thanhPho": "Hồ Chí MInh",
+      "hoTen": "Đỗ Thị Mỹ Linh",
+      "sdt": "0964163125",
+      "email": "LinhLinh@gmail.com",
+      "diaChi": "Hoài Đức",
+      "quanHuyen": "9",
+      "thanhPho": "Lâm Đồng",
       "id": 1
     },
     {
-      "hoTen": "cao huynh nhu",
-      "sdt": "123",
-      "email": "phuonghue199997@gmail.com",
-      "diaChi": "97man thien,phuong hiep phu,q9",
-      "quanHuyen": "9",
-      "thanhPho": "Hồ Chí MInh",
+      "hoTen": "nguyen trong dai",
+      "sdt": "09876543234",
+      "email": "nguyentrongdai@gmail.com",
+      "diaChi": "Hoài Đức",
+      "quanHuyen": "Lâm Hà",
+      "thanhPho": "Lâm Đồng",
       "id": 2
+    },
+    {
+      "hoTen": "Phan Thị Phương Huệ",
+      "sdt": "09876547997",
+      "email": "phuonghue1197@gmail.com",
+      "diaChi": "97 Man Thiện, Phường Hiệp Phú",
+      "quanHuyen": "9",
+      "thanhPho": "Hồ Chí Minh",
+      "id": 3
+    }
+  ],
+  "comment": [],
+  "giatien": [
+    {
+      "sotien": 55,
+      "id": 1
+    },
+    {
+      "sotien": 110,
+      "id": 2
+    },
+    {
+      "sotien": 110,
+      "id": 3
+    },
+    {
+      "sotien": 55,
+      "id": 4
+    },
+    {
+      "sotien": 110,
+      "id": 5
+    },
+    {
+      "sotien": 110,
+      "id": 6
+    },
+    {
+      "sotien": 165,
+      "id": 7
+    },
+    {
+      "sotien": 220,
+      "id": 8
+    },
+    {
+      "sotien": 110,
+      "id": 9
+    },
+    {
+      "sotien": 165,
+      "id": 10
+    },
+    {
+      "sotien": 110,
+      "id": 11
+    },
+    {
+      "sotien": 55,
+      "id": 12
+    },
+    {
+      "sotien": 55,
+      "id": 13
+    },
+    {
+      "sotien": 55,
+      "id": 14
+    },
+    {
+      "sotien": 55,
+      "id": 15
+    },
+    {
+      "sotien": 110,
+      "id": 16
+    },
+    {
+      "sotien": 110,
+      "id": 17
+    },
+    {
+      "sotien": 55,
+      "id": 18
+    },
+    {
+      "sotien": 114,
+      "id": 19
+    },
+    {
+      "sotien": 59,
+      "id": 20
+    },
+    {
+      "sotien": 59,
+      "id": 21
+    },
+    {
+      "sotien": 55,
+      "id": 22
+    },
+    {
+      "sotien": 110,
+      "id": 23
+    },
+    {
+      "sotien": 110,
+      "id": 24
+    },
+    {
+      "sotien": 55,
+      "id": 25
+    },
+    {
+      "sotien": 110,
+      "id": 26
+    },
+    {
+      "sotien": 165,
+      "id": 27
+    },
+    {
+      "sotien": 110,
+      "id": 28
+    },
+    {
+      "sotien": 55,
+      "id": 29
+    },
+    {
+      "sotien": 55,
+      "id": 30
+    },
+    {
+      "sotien": 59,
+      "id": 31
+    },
+    {
+      "sotien": 59,
+      "id": 32
+    },
+    {
+      "sotien": 55,
+      "id": 33
+    },
+    {
+      "sotien": 110,
+      "id": 34
+    },
+    {
+      "sotien": 165,
+      "id": 35
+    },
+    {
+      "sotien": 220,
+      "id": 36
+    },
+    {
+      "sotien": 165,
+      "id": 37
+    },
+    {
+      "sotien": 110,
+      "id": 38
+    },
+    {
+      "sotien": 55,
+      "id": 39
+    },
+    {
+      "sotien": 55,
+      "id": 40
+    },
+    {
+      "sotien": 55,
+      "id": 41
+    },
+    {
+      "sotien": 55,
+      "id": 42
+    },
+    {
+      "sotien": 114,
+      "id": 43
+    },
+    {
+      "sotien": 163,
+      "id": 44
+    },
+    {
+      "sotien": 108,
+      "id": 45
+    },
+    {
+      "sotien": 49,
+      "id": 46
+    },
+    {
+      "sotien": 49,
+      "id": 47
+    },
+    {
+      "sotien": 59,
+      "id": 48
+    },
+    {
+      "sotien": 118,
+      "id": 49
+    },
+    {
+      "sotien": 177,
+      "id": 50
+    },
+    {
+      "sotien": 236,
+      "id": 51
+    },
+    {
+      "sotien": 295,
+      "id": 52
+    },
+    {
+      "sotien": 236,
+      "id": 53
+    },
+    {
+      "sotien": 177,
+      "id": 54
+    },
+    {
+      "sotien": 118,
+      "id": 55
+    },
+    {
+      "sotien": 59,
+      "id": 56
+    },
+    {
+      "sotien": 59,
+      "id": 57
+    },
+    {
+      "sotien": 59,
+      "id": 58
+    },
+    {
+      "sotien": 118,
+      "id": 59
+    },
+    {
+      "sotien": 177,
+      "id": 60
+    },
+    {
+      "sotien": 177,
+      "id": 61
+    },
+    {
+      "sotien": 59,
+      "id": 62
+    },
+    {
+      "sotien": 118,
+      "id": 63
+    },
+    {
+      "sotien": 177,
+      "id": 64
+    },
+    {
+      "sotien": 236,
+      "id": 65
+    },
+    {
+      "sotien": 295,
+      "id": 66
+    },
+    {
+      "sotien": 354,
+      "id": 67
+    }
+  ],
+  "mondadat": [
+    {
+      "background": "../../assets/menu1.jpg",
+      "price": "59",
+      "name": "MATCHA ĐÁ XAY",
+      "id": 1,
+      "title": "Trà xanh, sữa tươi, kem tươi",
+      "count": 1
     }
   ],
   "MonNoiBat": [
@@ -177,7 +467,7 @@
       "background": "../../assets/17.jpg",
       "name": "NƯỚC CAM TƯƠI 100%",
       "price": "65",
-      "id": 21,
+      "id": 22,
       "title": "Fresh Orange Juice"
     },
     {
@@ -242,14 +532,14 @@
       "background": "../../assets/1.jpg",
       "name": "AMERICANO NÓNG",
       "price": "49",
-      "id": 32,
+      "id": 31,
       "title": "Espresso, nước nóng"
     },
     {
       "background": "../../assets/2.jpg",
       "name": "AMERICANO ĐÁ",
       "price": "49",
-      "id": 33,
+      "id": 32,
       "title": "Espresso, nước nóng, đá viên"
     }
   ],
@@ -258,22 +548,54 @@
       "background": "../../assets/1.jpg",
       "name": "COMBO FRIENDS MUG",
       "price": "230",
-      "id": 34,
+      "id": 33,
       "title": "Combo Friends Mug"
     },
     {
       "background": "../../assets/5.jpg",
       "name": "FRIENDS MUG ĐEN",
       "price": "145",
-      "id": 35,
+      "id": 34,
       "title": "Friends Mug Đen"
     },
     {
       "background": "../../assets/3.jpg",
       "name": "FRIENDS MUG TRẮNG",
       "price": "145",
-      "id": 36,
+      "id": 35,
       "title": "Friends Mug Trắng"
+    }
+  ],
+  "BanhNgot": [
+    {
+      "background": "../../assets/ngot1.jpg",
+      "name": "TIRAMISU",
+      "price": "35",
+      "id": 36,
+      "title": "Tiramisu"
+    },
+    {
+      "background": "../../assets/ngot2.jpg",
+      "name": "BEAR CAKE",
+      "price": "38",
+      "id": 37,
+      "title": "Bear Cake"
+    }
+  ],
+  "BanhMan": [
+    {
+      "background": "../../assets/man1.jpg",
+      "name": "BÁNH MÌ RUỐC PHÔ MAI",
+      "price": "35",
+      "id": 38,
+      "title": "Bánh mì ruốc phô mai"
+    },
+    {
+      "background": "../../assets/man2.jpg",
+      "name": "BÁNH BÔNG LAN TRỨNG MUỐI",
+      "price": "25",
+      "id": 39,
+      "title": "Bánh bông lan trứng muối"
     }
   ]
 }

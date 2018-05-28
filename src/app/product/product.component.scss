@@ -15,7 +15,7 @@
     float: left;
     position: absolute;
     opacity:0.9;
-    background-color:#ddd;
+    background-color:#ffffff;
     // padding-top: 50px;
 }
 
@@ -24,9 +24,8 @@
     height: 100vh;
     float: right;
     opacity:0.9;
-    background-color:#ddd;
-    padding-top: 50px;
-  
+    background-color:#ffffff;
+    padding-top: 35px;
 }
 .clear-both{
     clear: both;
@@ -38,16 +37,51 @@
     height: 20px;
     margin-left: 50px;
 }
+.submit{
+    width: 100%;
+    margin-top: 20px;
+}
+.submit a{
+    color: #ffffff;    
+    text-decoration: none;  
+    padding: 8px 150px;
+    background: orange;
+    font-size: 20px; 
+    margin-left: 5px; 
+}
 .submit button{
     color: #ffffff;    
     text-decoration: none;  
-    padding: 5px 107px;
+    padding: 10px 90px;
     background: orange;
     font-size: 20px; 
-    margin-left: 30px; 
     border-radius: 3px;
     border: 1px solid #e2e2e2;
     box-shadow: none;
+    margin-left: 53px;
+}
+.submit1{
+    width: 100%;
+    margin-top: 20px;
+}
+.submit1 a{
+    color: #ffffff;    
+    text-decoration: none;  
+    padding: 8px 100px;
+    background: orange;
+    font-size: 20px; 
+    margin-left: 5px; 
+}
+.submit1 button{
+    color: #ffffff;    
+    text-decoration: none;  
+    padding: 10px 60px;
+    background: orange;
+    font-size: 20px; 
+    border-radius: 3px;
+    border: 1px solid #e2e2e2;
+    box-shadow: none;
+    margin-left: 80px;
 }
 .left h2{
     text-align: center;
@@ -61,37 +95,45 @@
     margin-left: 80px;
     margin-top: 30px;
 }
- .btn-warning{
-    margin-left: 100px;
-    margin-top: 15px;
-
-}
-
 .mauxam1{
     color: rgb(82, 80, 80);
-     font-weight: bold;
-     font-size:15px;
- }
-
-
-.mauxam{
-    color: gray;
     font-weight: bold;
+}
+.mauxam{
+    color:orange;
+    font-weight: bold;
+}
+p{
     font-size: 15px;
-    font-family: "Source Sans Pro", sans-serif !important;
+}
+span {
+    font-size: 15px;
+    
+}
+.thongtin{
+    padding-top: 20px;
+   // padding-left: 30px;
 }
 .diadiem{
     margin-top: 30px;
 }
-.thongtin{
-    padding-top: 20px;
-    padding-left: 30px;
+.wrapper{
+    display: none;
+    margin-left: 50px;
+    margin-bottom: 30px;
 }
-.thanhtoan {
-  font-size: 10px;
-  margin: 10px;
-  padding: 10px;
-
+.btn{
+    padding: 10px 10px;
+    margin-top: 20px;
+    margin-left: 110px;
+    margin-bottom: 20px;
+}
+.thanhtoan{
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+.ghichu{
+    margin-left: 50px;
 }
 textarea{
     border: 1px solid #ccc;
@@ -101,17 +143,86 @@ h2{
     color: gray;
     font-weight: bold;
 }
-.ghichu{
-    margin-left: 10px;
+.container1 {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left: 50px;
 }
-.submit button{
-    color: #ffffff;    
-    text-decoration: none;  
-    padding: 10px 77px;
-    background: orange;
-    font-size: 15px; 
-    border-radius: 10px;
-    border: 1px solid #e2e2e2;
-    box-shadow: none;
-    margin-left: 53px;
+
+/* Hide the browser's default radio button */
+.container1 input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container1:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container1 input:checked ~ .checkmark {
+    background-color: orange;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container1 input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container1 .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+.DSMon{
+    margin-left: 80px;
+    margin-top: 20px;
+    font-size: 17px;
+}
+.sotien{
+    margin-left: 80px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+.tenmon{
+    float: left;
+    font-weight: bold;
+    color: rgb(63, 62, 62);
+}
+.giamon{
+    float: right;
+    margin-right: 100px;
 }
