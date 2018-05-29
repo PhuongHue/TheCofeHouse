@@ -9,7 +9,7 @@ import { GiaTien } from '../interface/giatien';
 import { catchError, retry } from 'rxjs/operators';
 import { switchMap } from 'rxjs/operators/switchMap';
 
-// dùng interceptor cho cái này cho khỏe nè
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
@@ -70,21 +70,10 @@ export class ThongtinspService {
 
   // Đưa món đã đặt lên localhost
   postThongTinMonDaDat(ttma: MonDaDat): Observable<MonDaDat> {
-    // chổ này, mình cần phải tìm xem là trên server có
-    // món với id này chưa
-    // máy anh remote sang máy khác nó hay bị đơ đơ @@
     ttma.numOrder = ttma.numOrder || 1;
     return this.http.get<MonDaDat>(`${this.urlMonDaDat}/${ttma.id}`)
       .pipe(
-        switchMap((monDatDat) => {
-          // mon nay da duoc dat truoc do
-          if (monDatDat.id) {
-            const numOrder = monDatDat.numOrder + (ttma.numOrder || 1);
-            return this.http.patch<any>(`${this.urlMonDaDat}/${ttma.id}`, { numOrder });
-          }
-          // chưa thì dùng post như này
-          return this.http.post<MonDaDat>(this.urlMonDaDat, ttma, httpOptions);
-        }),
+        switchMap(monDatDat => this.http.patch<any>(`${this.urlMonDaDat}/${ttma.id}`, { numOrder: ttma.numOrder })),
         catchError(() => this.http.post<MonDaDat>(this.urlMonDaDat, ttma, httpOptions)),
       );
   }
@@ -104,11 +93,12 @@ export class ThongtinspService {
   }
 
   /** DELETE: delete the hero from the server */
-  deleteHero (id: number): Observable<{}> {
-    const url = `${this.urlMonDaDat}/${id}`; // DELETE api/heroes/42
+  deleteOrder (id: number): Observable<{}> {
+    const url = `${this.urlMonDaDat}/${id}`;
     return this.http.delete(url, httpOptions);
-      // .pipe(
-      //   catchError(this.handleError('deleteHero'))
-      // );
+  }
+
+  updateOrder(id: number, updator: any) {
+    return this.http.patch(`${this.urlMonDaDat}/${id}`, updator);
   }
 }

@@ -274,10 +274,10 @@
                     </div>
                     <div class="variants-container">
                       <div class="row add_remove">
-                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)" (click)="pay()">
+                        <div class="col-md-6 remove" (click)="xoaKhoiGioHang(mon.id)">
                           <i class="fa fa-minus"></i>
                         </div>
-                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)" (click)="pay()">
+                        <div class="col-md-6 add" (click)="themVaoGioHang(mon.id)">
                           <i class="fa fa-plus"></i>
                         </div>
                       </div>
@@ -337,7 +337,7 @@
       <div class="danhsachchon">
         <p class="mauxam1">CÁC MÓN ĐÃ CHỌN</p>
         <div *ngFor="let mon of hienMonNoiBat">
-          <span style="font-size: 13px;">{{mon.name}} - {{mon.price}}.000VNĐ</span>
+          <span style="font-size: 13px;">{{mon.name}} - {{mon.numOrder}} x {{mon.price}}.000VNĐ</span>
         </div>
 
         <span class="mauxam">THÀNH TIỀN : </span>

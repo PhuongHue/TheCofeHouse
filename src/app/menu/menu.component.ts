@@ -17,6 +17,7 @@ import { GiaTien } from '../interface/giatien';
 import { BanhNgot } from '../interface/banhngot';
 import { BanhMan } from '../interface/banhman';
 import { MonDaDat } from '../interface/monandadat';
+import { forkJoin } from 'rxjs/observable/forkJoin';
 
 declare var $: any;
 
@@ -80,15 +81,7 @@ export class MenuComponent implements OnInit {
     this.thongtinsp.getDatHang().subscribe(dataDatHang => {
       const danhSachSanPham = dataDatHang;
     });
-    this.getMonNoiBat();
-    this.getCaPhe();
-    this.getSocola();
-    this.getTraiCay();
-    this.getTraDacBiet();
-    this.getBanhNgot();
-    this.getBanhMan();
-    this.getGift();
-    this.getMonDaDat();
+    this.fetchInitData();
     this.hienThiTien();
   }
 
@@ -149,85 +142,74 @@ export class MenuComponent implements OnInit {
   }
 
   pay() {
-    let temp = 0;
-    this.hienMonNoiBat.forEach(e => {
-      temp = temp + (+e.price);
-      this.giaTien = temp;
-    });
+    this.giaTien = this.hienMonNoiBat.reduce((prev, current) => prev + current.numOrder * +(current.price) , 0);
     const giatien: GiaTien = {
       sotien: this.giaTien,
     };
     this.thongtinsp.postSoTienDaMua(giatien).subscribe();
     console.log(this.giaTien);
   }
-  getMonNoiBat() {
-    this.thongtinsp.getMonNoiBat().subscribe(data => {
-      this.monNoiBat = data;
-    });
-  }
-  getCaPhe() {
-    this.thongtinsp.getCaPhe().subscribe(data => {
-      this.caPhe = data;
-    });
-  }
-  getSocola() {
-    this.thongtinsp.getSocola().subscribe(data => {
-      this.socola = data;
-    });
-  }
-  getTraiCay() {
-    this.thongtinsp.getTraiCay().subscribe(data => {
-      this.traiCay = data;
-    });
-  }
-  getTraDacBiet() {
-    this.thongtinsp.getTraDacBiet().subscribe(data => {
-      this.traDacBiet = data;
-    });
-  }
-  getBanhNgot() {
-    this.thongtinsp.getBanhNgot().subscribe(data => {
-      this.banhNgot = data;
-    });
-  }
-  getBanhMan() {
-    this.thongtinsp.getBanhMan().subscribe(data => {
-      this.banhMan = data;
+
+  public fetchInitData() {
+    forkJoin<any[]>(
+      this.thongtinsp.getMonNoiBat(),
+      this.thongtinsp.getCaPhe(),
+      this.thongtinsp.getSocola(),
+      this.thongtinsp.getTraiCay(),
+      this.thongtinsp.getTraDacBiet(),
+      this.thongtinsp.getBanhNgot(),
+      this.thongtinsp.getBanhMan(),
+      this.thongtinsp.getGift(),
+      this.thongtinsp.getThongTinMonDaDat(),
+    ).subscribe(([monNoiBat, cafe, socola, traicay, tradatbiet, banhNgot, banhMan, gift, monDadat]) => {
+      this.monNoiBat = monNoiBat;
+      this.caPhe = cafe;
+      this.socola = socola;
+      this.traiCay = traicay;
+      this.traDacBiet = tradatbiet;
+      this.banhMan = banhMan;
+      this.banhNgot = banhNgot;
+      this.gift = gift;
+      this.hienMonNoiBat = monDadat;
     });
   }
 
-  getGift() {
-    this.thongtinsp.getGift().subscribe(data => {
-      this.gift = data;
-    });
-  }
-  getMonDaDat() {
-    this.thongtinsp.getThongTinMonDaDat().subscribe(data => {
-      this.hienMonNoiBat = data;
-    });
-  }
   public themVaoGioHang(id) {
     this.arrIdDatHang.push(id);
     this.thongtinsp.addThemGioHang(this.arrIdDatHang);
     const tatCaMon = [].concat(this.monNoiBat,
       this.caPhe, this.socola, this.banhMan, this.banhNgot, this.gift, this.traiCay, this.traDacBiet);
-    const monTimDuoc = tatCaMon.find(mon => mon.id === id);
+    let monTimDuoc = tatCaMon.find(mon => mon.id === id);
     if (!monTimDuoc) { return; }
-    this.hienMonNoiBat.push(monTimDuoc);
+
+    monTimDuoc = Object.assign({}, monTimDuoc, { numOrder: 1 });
+    const matchMonDaChonIdx = this.hienMonNoiBat.findIndex(mon => mon.id === monTimDuoc.id);
+    if (matchMonDaChonIdx === -1) {
+      this.hienMonNoiBat.push(monTimDuoc);
+    } else {
+      monTimDuoc = Object.assign(monTimDuoc, { numOrder: this.hienMonNoiBat[matchMonDaChonIdx].numOrder + 1 });
+      this.hienMonNoiBat[matchMonDaChonIdx] = monTimDuoc;
+    }
     this.thongtinsp.postThongTinMonDaDat(monTimDuoc).subscribe();
+    // cap nhat gia
+    this.pay();
   }
+
   xoaKhoiGioHang(id) {
-    let pos = 0;
-    let check = false;
-    for (let i = 0; i < this.hienMonNoiBat.length; i++) {
-      if (this.hienMonNoiBat[i].id === id) {
-        pos = i;
-        check = true;
-      }
+    const matchMonIdx = this.hienMonNoiBat.findIndex(mon => mon.id === id);
+    if (matchMonIdx === -1) {
+      return;
     }
-    if (check === true) {
-      this.hienMonNoiBat.splice(pos, 1);
-      this.thongtinsp.deleteHero(id).subscribe();
+    const wantDecrease = this.hienMonNoiBat[matchMonIdx];
+    if (wantDecrease.numOrder <= 1) {
+      // delete this item
+      this.hienMonNoiBat.splice(matchMonIdx, 1);
+      this.thongtinsp.deleteOrder(wantDecrease.id).subscribe();
+    } else {
+      const newNumOrder = wantDecrease.numOrder - 1;
+      this.hienMonNoiBat[matchMonIdx] = Object.assign({}, wantDecrease, { numOrder: newNumOrder });
+      this.thongtinsp.updateOrder(id, { numOrder: newNumOrder }).subscribe();
     }
+    this.pay();
   }
 }
