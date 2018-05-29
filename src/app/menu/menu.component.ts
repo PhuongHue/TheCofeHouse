@@ -206,132 +206,14 @@ export class MenuComponent implements OnInit {
     });
   }
   public themVaoGioHang(id) {
-    let dem1 = 0;
-    const dem2 = 0;
-    const dem3 = 0;
-    const dem4 = 0;
-    const dem5 = 0;
-    const dem6 = 0;
-    const dem7 = 0;
-    const dem8 = 0;
     this.arrIdDatHang.push(id);
     this.thongtinsp.addThemGioHang(this.arrIdDatHang);
-    this.monNoiBat.forEach(e => {
-      if (e.id === id) {
-        dem1 += 1;
-        const mon: MonNoiBat = {
-          background: e.background,
-          price: e.price,
-          name: e.name,
-          id: e.id,
-          title: e.title,
-          count: dem1,
-        };
-        console.log(mon.count);
-        this.hienMonNoiBat.push(mon);
-        this.thongtinsp.postThongTinMonDaDat(mon).subscribe();
-      }
-    });
-    this.caPhe.forEach(e => {
-      if (e.id === id) {
-        const mon: CaPhe = {
-          background: e.background,
-          price: e.price,
-          name: e.name,
-          id: e.id,
-          title: e.title,
-          count: dem1 + 1,
-        };
-        this.hienMonNoiBat.push(mon);
-        this.thongtinsp.postThongTinMonDaDat(mon).subscribe();
-      }
-    });
-    this.socola.forEach(e => {
-      if (e.id === id) {
-        // console.log(`${e.id}-${e.name}-${e.price} = ${tinhTien} K`);
-        const mon: Socola = {
-          background: e.background,
-          price: e.price,
-          name: e.name,
-          id: e.id,
-          title: e.title,
-          count: dem3 + 1,
-        };
-        this.hienMonNoiBat.push(mon);
-        this.thongtinsp.postThongTinMonDaDat(mon).subscribe();
-      }
-    });
-    this.traiCay.forEach(e => {
-      if (e.id === id) {
-        const mon: TraiCay = {
-          background: e.background,
-          price: e.price,
-          name: e.name,
-          id: e.id,
-          title: e.title,
-          count: e.count + 1,
-        };
-        this.hienMonNoiBat.push(mon);
-        this.thongtinsp.postThongTinMonDaDat(mon).subscribe();
-      }
-    });
-    this.traDacBiet.forEach(e => {
-      if (e.id === id) {
-        const mon: TraDacBiet = {
-          background: e.background,
-          price: e.price,
-          name: e.name,
-          id: e.id,
-          title: e.title,
-          count: e.count + 1,
-        };
-        this.hienMonNoiBat.push(mon);
-        this.thongtinsp.postThongTinMonDaDat(mon).subscribe();
-      }
-    });
-    this.banhNgot.forEach(e => {
-      if (e.id === id) {
-        const mon: BanhNgot = {
-          background: e.background,
-          price: e.price,
-          name: e.name,
-          id: e.id,
-          title: e.title,
-          count: e.count + 1,
-        };
-        this.hienMonNoiBat.push(mon);
-        this.thongtinsp.postThongTinMonDaDat(mon).subscribe();
-      }
-    });
-    this.banhMan.forEach(e => {
-      if (e.id === id) {
-        const mon: BanhMan = {
-          background: e.background,
-          price: e.price,
-          name: e.name,
-          id: e.id,
-          title: e.title,
-          count: e.count + 1,
-        };
-        this.hienMonNoiBat.push(mon);
-        this.thongtinsp.postThongTinMonDaDat(mon).subscribe();
-      }
-    });
-    this.gift.forEach(e => {
-      if (e.id === id) {
-        const mon: Gift = {
-          background: e.background,
-          price: e.price,
-          name: e.name,
-          id: e.id,
-          title: e.title,
-          count: e.count + 1,
-        };
-        this.hienMonNoiBat.push(mon);
-        this.thongtinsp.postThongTinMonDaDat(mon).subscribe();
-      }
-    });
-
+    const tatCaMon = [].concat(this.monNoiBat,
+      this.caPhe, this.socola, this.banhMan, this.banhNgot, this.gift, this.traiCay, this.traDacBiet);
+    const monTimDuoc = tatCaMon.find(mon => mon.id === id);
+    if (!monTimDuoc) { return; }
+    this.hienMonNoiBat.push(monTimDuoc);
+    this.thongtinsp.postThongTinMonDaDat(monTimDuoc).subscribe();
   }
   xoaVaoGioHang(id) {
     let pos = 0;

@@ -7,7 +7,9 @@ import { GiaTien } from '../interface/giatien';
 
 // import { throwError } from 'rxjs/Rx';
 import { catchError, retry } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators/switchMap';
 
+// dùng interceptor cho cái này cho khỏe nè
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
@@ -68,7 +70,23 @@ export class ThongtinspService {
 
   // Đưa món đã đặt lên localhost
   postThongTinMonDaDat(ttma: MonDaDat): Observable<MonDaDat> {
-    return this.http.post<MonDaDat>(this.urlMonDaDat, ttma, httpOptions);
+    // chổ này, mình cần phải tìm xem là trên server có
+    // món với id này chưa
+    // máy anh remote sang máy khác nó hay bị đơ đơ @@
+    ttma.numOrder = ttma.numOrder || 1;
+    return this.http.get<MonDaDat>(`${this.urlMonDaDat}/${ttma.id}`)
+      .pipe(
+        switchMap((monDatDat) => {
+          // mon nay da duoc dat truoc do
+          if (monDatDat.id) {
+            const numOrder = monDatDat.numOrder + (ttma.numOrder || 1);
+            return this.http.patch<any>(`${this.urlMonDaDat}/${ttma.id}`, { numOrder });
+          }
+          // chưa thì dùng post như này
+          return this.http.post<MonDaDat>(this.urlMonDaDat, ttma, httpOptions);
+        }),
+        catchError(() => this.http.post<MonDaDat>(this.urlMonDaDat, ttma, httpOptions)),
+      );
   }
   // Lấy về từ localhost
   getThongTinMonDaDat(): any {

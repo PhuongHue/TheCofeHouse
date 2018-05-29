@@ -4,5 +4,4 @@ export interface BanhMan {
     name: string;
     id: number;
     title: string;
-    count: number;
 }

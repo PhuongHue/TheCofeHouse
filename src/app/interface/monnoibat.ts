@@ -4,5 +4,4 @@ export interface MonNoiBat {
     name: string;
     id: number;
     title: string;
-    count: number;
 }

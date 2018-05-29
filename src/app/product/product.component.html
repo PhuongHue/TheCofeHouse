@@ -4,7 +4,7 @@
     <div class="img-parttern"></div>
     <div class="DSMon" *ngFor='let mon of monDaDat'>
       <p class="tenmon">{{mon.name}}</p>
-      <p class="mauxam giamon">{{mon.price}}.000 VNĐ</p>
+      <p class="mauxam giamon">{{mon.numOrder}} x {{mon.price}}.000 VNĐ</p>
       <div class="clear-both"></div>
     </div>
     <hr style="width: 80%; margin-left: 80px">
@@ -94,7 +94,7 @@
     </div> -->
 
     <div class="submit" style="cursor: pointer">
-      <button type="button" (click)="orderList()">Đặt hàng</button>
+      <button type="button" (click)="order()">Đặt hàng</button>
     </div>
   </div>
   <div class="clear-both"></div>

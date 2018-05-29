@@ -4,5 +4,4 @@ export interface TraiCay {
     name: string;
     id: number;
     title: string;
-    count: number;
 }

@@ -30,7 +30,6 @@ export class ProductComponent implements OnInit {
     this.getDSMonNoiBat();
     this.getDSCaPhe();
     this.hienThiThongTinMon();
-    this.hienThiSoTien();
   }
 
   // Lấy thông tin từ server
@@ -63,10 +62,11 @@ export class ProductComponent implements OnInit {
   }
   hienThiThongTinMon() {
     this.thongtinsp.getThongTinMonDaDat().subscribe(data => {
-      const arr = data;
-      arr.forEach(e => {
-        this.monDaDat = data;
+      this.monDaDat = data.map(mon => {
+        mon.totalPrice = +(mon.price) * mon.numOrder;
+        return mon;
       });
+      this.giaTien = this.monDaDat.reduce((pre, acc) => pre + acc.totalPrice, 0);
       console.log(this.monDaDat);
     });
   }
@@ -96,13 +96,21 @@ export class ProductComponent implements OnInit {
       this.arrOrder = dataMon;
     });
   }
-  orderList() {
-    for (let i = 0; i < this.arrOrder.length; i++) {
-      if (this.arrOrder[i].id === +this.idDatHang[i]) {
-        console.log(`${this.arrOrder[i].name}`);
-        console.log(`${this.arrOrder[i].id}`);
+  order() {
+    // for (let i = 0; i < this.arrOrder.length; i++) {
+    //   if (this.arrOrder[i].id === +this.idDatHang[i]) {
+    //     console.log(`${this.arrOrder[i].name}`);
+    //     console.log(`${this.arrOrder[i].id}`);
 
+    //   }
+    // }
+    this.thongtinsp.getThongTinMonDaDat().subscribe(data => {
+      this.monDaDat = data;
+      if (this.monDaDat.length === 0) {
+        alert('Chọn món trước khi thanh toán');
+      } else {
+        alert('Đặt hàng thành công');
       }
-    }
+    });
   }
 }

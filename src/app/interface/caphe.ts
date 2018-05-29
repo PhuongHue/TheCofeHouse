@@ -4,5 +4,4 @@ export interface CaPhe {
     name: string;
     id: number;
     title: string;
-    count: number;
 }

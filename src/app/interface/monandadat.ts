@@ -4,5 +4,6 @@ export interface MonDaDat {
     name: string;
     id: number;
     title: string;
-    count: number;
+    numOrder?: number;
+    totalPrice?: number;
 }
