@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { OrderComponent } from './order/order.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProductComponent } from './product/product.component';
+import { ProductService } from './product/product.service';
 import { OrderService } from './order/order.service';
 import { FormGroup, ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { MenuService } from './menu/menu.service';
@@ -57,6 +58,7 @@ const routes: Routes = [
     HttpClientModule
   ],
   providers: [
+    ProductService,
     OrderService,
     MenuService,
     HomeService,

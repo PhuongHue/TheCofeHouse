@@ -195,6 +195,7 @@ export class MenuComponent implements OnInit {
       this.banhMan = data;
     });
   }
+
   getGift() {
     this.thongtinsp.getGift().subscribe(data => {
       this.gift = data;
@@ -215,7 +216,7 @@ export class MenuComponent implements OnInit {
     this.hienMonNoiBat.push(monTimDuoc);
     this.thongtinsp.postThongTinMonDaDat(monTimDuoc).subscribe();
   }
-  xoaVaoGioHang(id) {
+  xoaKhoiGioHang(id) {
     let pos = 0;
     let check = false;
     for (let i = 0; i < this.hienMonNoiBat.length; i++) {
